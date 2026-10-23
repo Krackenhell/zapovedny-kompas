@@ -1,0 +1,7 @@
+{
+ "source": "NASA FIRMS: VIIRS_NOAA20_NRT, VIIRS_NOAA21_NRT, последние 48 ч",
+ "radius_m": 5000,
+ "checked_points": 2,
+ "fires": [],
+ "updated": "2026-10-23T13:30:14Z"
+}
