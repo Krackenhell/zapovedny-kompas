@@ -1,13 +1,13 @@
 {
  "source": "NASA FIRMS: NOAA-20 и NOAA-21, последние 48 часов",
  "radius_m": 5000,
- "updated": "2026-10-26T08:19:22Z",
+ "updated": "2026-10-26T08:58:21Z",
  "regions": {
   "tyumen": {
    "status": "ok",
-   "updated": "2026-10-26T08:19:22Z",
-   "attempted": "2026-10-26T08:19:22Z",
-   "checked_points": 38,
+   "updated": "2026-10-26T08:58:21Z",
+   "attempted": "2026-10-26T08:58:21Z",
+   "checked_points": 29,
    "fires": [
     {
      "lat": 58.26611,
@@ -19,7 +19,8 @@
      "daynight": "N",
      "source": "VIIRS_NOAA21_NRT",
      "region_id": "tyumen",
-     "near_oopt": false
+     "near_oopt": false,
+     "first_seen": null
     },
     {
      "lat": 58.26825,
@@ -31,7 +32,8 @@
      "daynight": "N",
      "source": "VIIRS_NOAA20_NRT",
      "region_id": "tyumen",
-     "near_oopt": false
+     "near_oopt": false,
+     "first_seen": null
     },
     {
      "lat": 58.24091,
@@ -43,7 +45,8 @@
      "daynight": "N",
      "source": "VIIRS_NOAA21_NRT",
      "region_id": "tyumen",
-     "near_oopt": false
+     "near_oopt": false,
+     "first_seen": null
     },
     {
      "lat": 58.26814,
@@ -55,7 +58,8 @@
      "daynight": "N",
      "source": "VIIRS_NOAA20_NRT",
      "region_id": "tyumen",
-     "near_oopt": false
+     "near_oopt": false,
+     "first_seen": null
     },
     {
      "lat": 58.26908,
@@ -67,7 +71,8 @@
      "daynight": "N",
      "source": "VIIRS_NOAA20_NRT",
      "region_id": "tyumen",
-     "near_oopt": false
+     "near_oopt": false,
+     "first_seen": null
     },
     {
      "lat": 56.28329,
@@ -79,7 +84,8 @@
      "daynight": "D",
      "source": "VIIRS_NOAA20_NRT",
      "region_id": "tyumen",
-     "near_oopt": false
+     "near_oopt": false,
+     "first_seen": null
     },
     {
      "lat": 56.28651,
@@ -91,7 +97,8 @@
      "daynight": "D",
      "source": "VIIRS_NOAA20_NRT",
      "region_id": "tyumen",
-     "near_oopt": false
+     "near_oopt": false,
+     "first_seen": null
     },
     {
      "lat": 57.08171,
@@ -103,7 +110,8 @@
      "daynight": "D",
      "source": "VIIRS_NOAA20_NRT",
      "region_id": "tyumen",
-     "near_oopt": false
+     "near_oopt": false,
+     "first_seen": null
     },
     {
      "lat": 57.08587,
@@ -115,7 +123,8 @@
      "daynight": "D",
      "source": "VIIRS_NOAA20_NRT",
      "region_id": "tyumen",
-     "near_oopt": false
+     "near_oopt": false,
+     "first_seen": null
     },
     {
      "lat": 56.28698,
@@ -127,7 +136,8 @@
      "daynight": "D",
      "source": "VIIRS_NOAA21_NRT",
      "region_id": "tyumen",
-     "near_oopt": false
+     "near_oopt": false,
+     "first_seen": null
     },
     {
      "lat": 57.10546,
@@ -139,7 +149,8 @@
      "daynight": "N",
      "source": "VIIRS_NOAA20_NRT",
      "region_id": "tyumen",
-     "near_oopt": false
+     "near_oopt": false,
+     "first_seen": null
     },
     {
      "lat": 57.10773,
@@ -151,7 +162,8 @@
      "daynight": "N",
      "source": "VIIRS_NOAA20_NRT",
      "region_id": "tyumen",
-     "near_oopt": false
+     "near_oopt": false,
+     "first_seen": null
     },
     {
      "lat": 58.26298,
@@ -163,7 +175,8 @@
      "daynight": "N",
      "source": "VIIRS_NOAA20_NRT",
      "region_id": "tyumen",
-     "near_oopt": false
+     "near_oopt": false,
+     "first_seen": null
     },
     {
      "lat": 58.26481,
@@ -175,7 +188,8 @@
      "daynight": "N",
      "source": "VIIRS_NOAA20_NRT",
      "region_id": "tyumen",
-     "near_oopt": false
+     "near_oopt": false,
+     "first_seen": null
     },
     {
      "lat": 58.2674,
@@ -187,7 +201,8 @@
      "daynight": "N",
      "source": "VIIRS_NOAA21_NRT",
      "region_id": "tyumen",
-     "near_oopt": false
+     "near_oopt": false,
+     "first_seen": null
     },
     {
      "lat": 56.27592,
@@ -199,7 +214,8 @@
      "daynight": "D",
      "source": "VIIRS_NOAA21_NRT",
      "region_id": "tyumen",
-     "near_oopt": false
+     "near_oopt": false,
+     "first_seen": null
     },
     {
      "lat": 56.27607,
@@ -211,7 +227,8 @@
      "daynight": "D",
      "source": "VIIRS_NOAA21_NRT",
      "region_id": "tyumen",
-     "near_oopt": false
+     "near_oopt": false,
+     "first_seen": null
     },
     {
      "lat": 56.27913,
@@ -223,7 +240,8 @@
      "daynight": "D",
      "source": "VIIRS_NOAA21_NRT",
      "region_id": "tyumen",
-     "near_oopt": false
+     "near_oopt": false,
+     "first_seen": null
     },
     {
      "lat": 56.27926,
@@ -235,7 +253,8 @@
      "daynight": "D",
      "source": "VIIRS_NOAA21_NRT",
      "region_id": "tyumen",
-     "near_oopt": false
+     "near_oopt": false,
+     "first_seen": null
     },
     {
      "lat": 56.27939,
@@ -247,7 +266,8 @@
      "daynight": "D",
      "source": "VIIRS_NOAA21_NRT",
      "region_id": "tyumen",
-     "near_oopt": false
+     "near_oopt": false,
+     "first_seen": null
     },
     {
      "lat": 56.28094,
@@ -259,7 +279,8 @@
      "daynight": "D",
      "source": "VIIRS_NOAA21_NRT",
      "region_id": "tyumen",
-     "near_oopt": false
+     "near_oopt": false,
+     "first_seen": null
     },
     {
      "lat": 56.2811,
@@ -271,7 +292,8 @@
      "daynight": "D",
      "source": "VIIRS_NOAA21_NRT",
      "region_id": "tyumen",
-     "near_oopt": false
+     "near_oopt": false,
+     "first_seen": null
     },
     {
      "lat": 56.28125,
@@ -283,7 +305,8 @@
      "daynight": "D",
      "source": "VIIRS_NOAA21_NRT",
      "region_id": "tyumen",
-     "near_oopt": false
+     "near_oopt": false,
+     "first_seen": null
     },
     {
      "lat": 56.28141,
@@ -295,7 +318,8 @@
      "daynight": "D",
      "source": "VIIRS_NOAA21_NRT",
      "region_id": "tyumen",
-     "near_oopt": false
+     "near_oopt": false,
+     "first_seen": null
     },
     {
      "lat": 56.28447,
@@ -307,7 +331,8 @@
      "daynight": "D",
      "source": "VIIRS_NOAA21_NRT",
      "region_id": "tyumen",
-     "near_oopt": false
+     "near_oopt": false,
+     "first_seen": null
     },
     {
      "lat": 56.28473,
@@ -319,7 +344,8 @@
      "daynight": "D",
      "source": "VIIRS_NOAA21_NRT",
      "region_id": "tyumen",
-     "near_oopt": false
+     "near_oopt": false,
+     "first_seen": null
     },
     {
      "lat": 56.28674,
@@ -331,7 +357,8 @@
      "daynight": "D",
      "source": "VIIRS_NOAA21_NRT",
      "region_id": "tyumen",
-     "near_oopt": false
+     "near_oopt": false,
+     "first_seen": null
     },
     {
      "lat": 57.05972,
@@ -343,7 +370,8 @@
      "daynight": "D",
      "source": "VIIRS_NOAA21_NRT",
      "region_id": "tyumen",
-     "near_oopt": false
+     "near_oopt": false,
+     "first_seen": null
     },
     {
      "lat": 57.05988,
@@ -355,122 +383,15 @@
      "daynight": "D",
      "source": "VIIRS_NOAA21_NRT",
      "region_id": "tyumen",
-     "near_oopt": false
-    },
-    {
-     "lat": 56.20971,
-     "lon": 65.71655,
-     "acquired": "2026-10-24T08:30:00Z",
-     "satellite": "NOAA-20",
-     "confidence": "средняя",
-     "frp": 2.74,
-     "daynight": "D",
-     "source": "VIIRS_NOAA20_NRT",
-     "region_id": "tyumen",
-     "near_oopt": false
-    },
-    {
-     "lat": 56.23754,
-     "lon": 65.76759,
-     "acquired": "2026-10-24T08:30:00Z",
-     "satellite": "NOAA-20",
-     "confidence": "средняя",
-     "frp": 4.68,
-     "daynight": "D",
-     "source": "VIIRS_NOAA20_NRT",
-     "region_id": "tyumen",
-     "near_oopt": false
-    },
-    {
-     "lat": 56.27888,
-     "lon": 65.7086,
-     "acquired": "2026-10-24T08:30:00Z",
-     "satellite": "NOAA-20",
-     "confidence": "средняя",
-     "frp": 55.39,
-     "daynight": "D",
-     "source": "VIIRS_NOAA20_NRT",
-     "region_id": "tyumen",
-     "near_oopt": false
-    },
-    {
-     "lat": 56.28058,
-     "lon": 65.69404,
-     "acquired": "2026-10-24T08:30:00Z",
-     "satellite": "NOAA-20",
-     "confidence": "средняя",
-     "frp": 13.57,
-     "daynight": "D",
-     "source": "VIIRS_NOAA20_NRT",
-     "region_id": "tyumen",
-     "near_oopt": false
-    },
-    {
-     "lat": 56.28142,
-     "lon": 65.70063,
-     "acquired": "2026-10-24T08:30:00Z",
-     "satellite": "NOAA-20",
-     "confidence": "средняя",
-     "frp": 13.57,
-     "daynight": "D",
-     "source": "VIIRS_NOAA20_NRT",
-     "region_id": "tyumen",
-     "near_oopt": false
-    },
-    {
-     "lat": 56.2831,
-     "lon": 65.71384,
-     "acquired": "2026-10-24T08:30:00Z",
-     "satellite": "NOAA-20",
-     "confidence": "средняя",
-     "frp": 55.39,
-     "daynight": "D",
-     "source": "VIIRS_NOAA20_NRT",
-     "region_id": "tyumen",
-     "near_oopt": false
-    },
-    {
-     "lat": 56.28563,
-     "lon": 65.70585,
-     "acquired": "2026-10-24T08:30:00Z",
-     "satellite": "NOAA-20",
-     "confidence": "средняя",
-     "frp": 6.11,
-     "daynight": "D",
-     "source": "VIIRS_NOAA20_NRT",
-     "region_id": "tyumen",
-     "near_oopt": false
-    },
-    {
-     "lat": 57.05971,
-     "lon": 65.03577,
-     "acquired": "2026-10-24T08:30:00Z",
-     "satellite": "NOAA-20",
-     "confidence": "средняя",
-     "frp": 7.7,
-     "daynight": "D",
-     "source": "VIIRS_NOAA20_NRT",
-     "region_id": "tyumen",
-     "near_oopt": false
-    },
-    {
-     "lat": 57.06057,
-     "lon": 65.04242,
-     "acquired": "2026-10-24T08:30:00Z",
-     "satellite": "NOAA-20",
-     "confidence": "средняя",
-     "frp": 7.7,
-     "daynight": "D",
-     "source": "VIIRS_NOAA20_NRT",
-     "region_id": "tyumen",
-     "near_oopt": false
+     "near_oopt": false,
+     "first_seen": null
     }
    ]
   },
   "moscow": {
    "status": "ok",
-   "updated": "2026-10-26T08:19:22Z",
-   "attempted": "2026-10-26T08:19:22Z",
+   "updated": "2026-10-26T08:58:21Z",
+   "attempted": "2026-10-26T08:58:21Z",
    "checked_points": 1,
    "fires": [
     {
@@ -483,14 +404,15 @@
      "daynight": "N",
      "source": "VIIRS_NOAA20_NRT",
      "region_id": "moscow",
-     "near_oopt": false
+     "near_oopt": false,
+     "first_seen": null
     }
    ]
   },
   "moscow-oblast": {
    "status": "ok",
-   "updated": "2026-10-26T08:19:22Z",
-   "attempted": "2026-10-26T08:19:22Z",
+   "updated": "2026-10-26T08:58:21Z",
+   "attempted": "2026-10-26T08:58:21Z",
    "checked_points": 22,
    "fires": [
     {
@@ -503,7 +425,8 @@
      "daynight": "N",
      "source": "VIIRS_NOAA20_NRT",
      "region_id": "moscow-oblast",
-     "near_oopt": false
+     "near_oopt": false,
+     "first_seen": null
     },
     {
      "lat": 55.0598,
@@ -515,7 +438,8 @@
      "daynight": "N",
      "source": "VIIRS_NOAA21_NRT",
      "region_id": "moscow-oblast",
-     "near_oopt": false
+     "near_oopt": false,
+     "first_seen": null
     },
     {
      "lat": 55.58956,
@@ -527,7 +451,8 @@
      "daynight": "N",
      "source": "VIIRS_NOAA21_NRT",
      "region_id": "moscow-oblast",
-     "near_oopt": false
+     "near_oopt": false,
+     "first_seen": null
     },
     {
      "lat": 55.05943,
@@ -539,7 +464,8 @@
      "daynight": "N",
      "source": "VIIRS_NOAA20_NRT",
      "region_id": "moscow-oblast",
-     "near_oopt": false
+     "near_oopt": false,
+     "first_seen": null
     },
     {
      "lat": 55.06178,
@@ -551,7 +477,8 @@
      "daynight": "N",
      "source": "VIIRS_NOAA20_NRT",
      "region_id": "moscow-oblast",
-     "near_oopt": false
+     "near_oopt": false,
+     "first_seen": null
     },
     {
      "lat": 55.17836,
@@ -563,7 +490,8 @@
      "daynight": "N",
      "source": "VIIRS_NOAA20_NRT",
      "region_id": "moscow-oblast",
-     "near_oopt": false
+     "near_oopt": false,
+     "first_seen": null
     },
     {
      "lat": 55.25807,
@@ -575,7 +503,8 @@
      "daynight": "N",
      "source": "VIIRS_NOAA20_NRT",
      "region_id": "moscow-oblast",
-     "near_oopt": false
+     "near_oopt": false,
+     "first_seen": null
     },
     {
      "lat": 55.33799,
@@ -587,7 +516,8 @@
      "daynight": "N",
      "source": "VIIRS_NOAA20_NRT",
      "region_id": "moscow-oblast",
-     "near_oopt": false
+     "near_oopt": false,
+     "first_seen": null
     },
     {
      "lat": 55.64069,
@@ -599,7 +529,8 @@
      "daynight": "N",
      "source": "VIIRS_NOAA21_NRT",
      "region_id": "moscow-oblast",
-     "near_oopt": false
+     "near_oopt": false,
+     "first_seen": null
     },
     {
      "lat": 56.53485,
@@ -611,7 +542,8 @@
      "daynight": "N",
      "source": "VIIRS_NOAA21_NRT",
      "region_id": "moscow-oblast",
-     "near_oopt": false
+     "near_oopt": false,
+     "first_seen": null
     },
     {
      "lat": 55.7595,
@@ -623,7 +555,8 @@
      "daynight": "D",
      "source": "VIIRS_NOAA20_NRT",
      "region_id": "moscow-oblast",
-     "near_oopt": false
+     "near_oopt": false,
+     "first_seen": null
     },
     {
      "lat": 55.7617,
@@ -635,7 +568,8 @@
      "daynight": "D",
      "source": "VIIRS_NOAA20_NRT",
      "region_id": "moscow-oblast",
-     "near_oopt": false
+     "near_oopt": false,
+     "first_seen": null
     },
     {
      "lat": 55.76442,
@@ -647,7 +581,8 @@
      "daynight": "D",
      "source": "VIIRS_NOAA21_NRT",
      "region_id": "moscow-oblast",
-     "near_oopt": false
+     "near_oopt": false,
+     "first_seen": null
     },
     {
      "lat": 55.05966,
@@ -659,7 +594,8 @@
      "daynight": "N",
      "source": "VIIRS_NOAA21_NRT",
      "region_id": "moscow-oblast",
-     "near_oopt": false
+     "near_oopt": false,
+     "first_seen": null
     },
     {
      "lat": 55.35367,
@@ -671,7 +607,8 @@
      "daynight": "N",
      "source": "VIIRS_NOAA21_NRT",
      "region_id": "moscow-oblast",
-     "near_oopt": false
+     "near_oopt": false,
+     "first_seen": null
     },
     {
      "lat": 55.11504,
@@ -683,7 +620,8 @@
      "daynight": "N",
      "source": "VIIRS_NOAA20_NRT",
      "region_id": "moscow-oblast",
-     "near_oopt": false
+     "near_oopt": false,
+     "first_seen": null
     },
     {
      "lat": 55.40808,
@@ -695,7 +633,8 @@
      "daynight": "N",
      "source": "VIIRS_NOAA20_NRT",
      "region_id": "moscow-oblast",
-     "near_oopt": false
+     "near_oopt": false,
+     "first_seen": null
     },
     {
      "lat": 56.22168,
@@ -707,7 +646,8 @@
      "daynight": "N",
      "source": "VIIRS_NOAA20_NRT",
      "region_id": "moscow-oblast",
-     "near_oopt": false
+     "near_oopt": false,
+     "first_seen": null
     },
     {
      "lat": 55.17605,
@@ -719,7 +659,8 @@
      "daynight": "N",
      "source": "VIIRS_NOAA21_NRT",
      "region_id": "moscow-oblast",
-     "near_oopt": false
+     "near_oopt": false,
+     "first_seen": null
     },
     {
      "lat": 55.17631,
@@ -731,7 +672,8 @@
      "daynight": "N",
      "source": "VIIRS_NOAA21_NRT",
      "region_id": "moscow-oblast",
-     "near_oopt": false
+     "near_oopt": false,
+     "first_seen": null
     },
     {
      "lat": 56.1527,
@@ -743,7 +685,8 @@
      "daynight": "N",
      "source": "VIIRS_NOAA21_NRT",
      "region_id": "moscow-oblast",
-     "near_oopt": false
+     "near_oopt": false,
+     "first_seen": null
     },
     {
      "lat": 56.15462,
@@ -755,12 +698,13 @@
      "daynight": "N",
      "source": "VIIRS_NOAA21_NRT",
      "region_id": "moscow-oblast",
-     "near_oopt": false
+     "near_oopt": false,
+     "first_seen": null
     }
    ]
   }
  },
- "checked_points": 61,
+ "checked_points": 52,
  "fires": [
   {
    "lat": 58.26611,
@@ -772,7 +716,8 @@
    "daynight": "N",
    "source": "VIIRS_NOAA21_NRT",
    "region_id": "tyumen",
-   "near_oopt": false
+   "near_oopt": false,
+   "first_seen": null
   },
   {
    "lat": 58.26825,
@@ -784,7 +729,8 @@
    "daynight": "N",
    "source": "VIIRS_NOAA20_NRT",
    "region_id": "tyumen",
-   "near_oopt": false
+   "near_oopt": false,
+   "first_seen": null
   },
   {
    "lat": 58.24091,
@@ -796,7 +742,8 @@
    "daynight": "N",
    "source": "VIIRS_NOAA21_NRT",
    "region_id": "tyumen",
-   "near_oopt": false
+   "near_oopt": false,
+   "first_seen": null
   },
   {
    "lat": 58.26814,
@@ -808,7 +755,8 @@
    "daynight": "N",
    "source": "VIIRS_NOAA20_NRT",
    "region_id": "tyumen",
-   "near_oopt": false
+   "near_oopt": false,
+   "first_seen": null
   },
   {
    "lat": 58.26908,
@@ -820,7 +768,8 @@
    "daynight": "N",
    "source": "VIIRS_NOAA20_NRT",
    "region_id": "tyumen",
-   "near_oopt": false
+   "near_oopt": false,
+   "first_seen": null
   },
   {
    "lat": 56.28329,
@@ -832,7 +781,8 @@
    "daynight": "D",
    "source": "VIIRS_NOAA20_NRT",
    "region_id": "tyumen",
-   "near_oopt": false
+   "near_oopt": false,
+   "first_seen": null
   },
   {
    "lat": 56.28651,
@@ -844,7 +794,8 @@
    "daynight": "D",
    "source": "VIIRS_NOAA20_NRT",
    "region_id": "tyumen",
-   "near_oopt": false
+   "near_oopt": false,
+   "first_seen": null
   },
   {
    "lat": 57.08171,
@@ -856,7 +807,8 @@
    "daynight": "D",
    "source": "VIIRS_NOAA20_NRT",
    "region_id": "tyumen",
-   "near_oopt": false
+   "near_oopt": false,
+   "first_seen": null
   },
   {
    "lat": 57.08587,
@@ -868,7 +820,8 @@
    "daynight": "D",
    "source": "VIIRS_NOAA20_NRT",
    "region_id": "tyumen",
-   "near_oopt": false
+   "near_oopt": false,
+   "first_seen": null
   },
   {
    "lat": 56.28698,
@@ -880,7 +833,8 @@
    "daynight": "D",
    "source": "VIIRS_NOAA21_NRT",
    "region_id": "tyumen",
-   "near_oopt": false
+   "near_oopt": false,
+   "first_seen": null
   },
   {
    "lat": 57.10546,
@@ -892,7 +846,8 @@
    "daynight": "N",
    "source": "VIIRS_NOAA20_NRT",
    "region_id": "tyumen",
-   "near_oopt": false
+   "near_oopt": false,
+   "first_seen": null
   },
   {
    "lat": 57.10773,
@@ -904,7 +859,8 @@
    "daynight": "N",
    "source": "VIIRS_NOAA20_NRT",
    "region_id": "tyumen",
-   "near_oopt": false
+   "near_oopt": false,
+   "first_seen": null
   },
   {
    "lat": 58.26298,
@@ -916,7 +872,8 @@
    "daynight": "N",
    "source": "VIIRS_NOAA20_NRT",
    "region_id": "tyumen",
-   "near_oopt": false
+   "near_oopt": false,
+   "first_seen": null
   },
   {
    "lat": 58.26481,
@@ -928,7 +885,8 @@
    "daynight": "N",
    "source": "VIIRS_NOAA20_NRT",
    "region_id": "tyumen",
-   "near_oopt": false
+   "near_oopt": false,
+   "first_seen": null
   },
   {
    "lat": 58.2674,
@@ -940,7 +898,8 @@
    "daynight": "N",
    "source": "VIIRS_NOAA21_NRT",
    "region_id": "tyumen",
-   "near_oopt": false
+   "near_oopt": false,
+   "first_seen": null
   },
   {
    "lat": 56.27592,
@@ -952,7 +911,8 @@
    "daynight": "D",
    "source": "VIIRS_NOAA21_NRT",
    "region_id": "tyumen",
-   "near_oopt": false
+   "near_oopt": false,
+   "first_seen": null
   },
   {
    "lat": 56.27607,
@@ -964,7 +924,8 @@
    "daynight": "D",
    "source": "VIIRS_NOAA21_NRT",
    "region_id": "tyumen",
-   "near_oopt": false
+   "near_oopt": false,
+   "first_seen": null
   },
   {
    "lat": 56.27913,
@@ -976,7 +937,8 @@
    "daynight": "D",
    "source": "VIIRS_NOAA21_NRT",
    "region_id": "tyumen",
-   "near_oopt": false
+   "near_oopt": false,
+   "first_seen": null
   },
   {
    "lat": 56.27926,
@@ -988,7 +950,8 @@
    "daynight": "D",
    "source": "VIIRS_NOAA21_NRT",
    "region_id": "tyumen",
-   "near_oopt": false
+   "near_oopt": false,
+   "first_seen": null
   },
   {
    "lat": 56.27939,
@@ -1000,7 +963,8 @@
    "daynight": "D",
    "source": "VIIRS_NOAA21_NRT",
    "region_id": "tyumen",
-   "near_oopt": false
+   "near_oopt": false,
+   "first_seen": null
   },
   {
    "lat": 56.28094,
@@ -1012,7 +976,8 @@
    "daynight": "D",
    "source": "VIIRS_NOAA21_NRT",
    "region_id": "tyumen",
-   "near_oopt": false
+   "near_oopt": false,
+   "first_seen": null
   },
   {
    "lat": 56.2811,
@@ -1024,7 +989,8 @@
    "daynight": "D",
    "source": "VIIRS_NOAA21_NRT",
    "region_id": "tyumen",
-   "near_oopt": false
+   "near_oopt": false,
+   "first_seen": null
   },
   {
    "lat": 56.28125,
@@ -1036,7 +1002,8 @@
    "daynight": "D",
    "source": "VIIRS_NOAA21_NRT",
    "region_id": "tyumen",
-   "near_oopt": false
+   "near_oopt": false,
+   "first_seen": null
   },
   {
    "lat": 56.28141,
@@ -1048,7 +1015,8 @@
    "daynight": "D",
    "source": "VIIRS_NOAA21_NRT",
    "region_id": "tyumen",
-   "near_oopt": false
+   "near_oopt": false,
+   "first_seen": null
   },
   {
    "lat": 56.28447,
@@ -1060,7 +1028,8 @@
    "daynight": "D",
    "source": "VIIRS_NOAA21_NRT",
    "region_id": "tyumen",
-   "near_oopt": false
+   "near_oopt": false,
+   "first_seen": null
   },
   {
    "lat": 56.28473,
@@ -1072,7 +1041,8 @@
    "daynight": "D",
    "source": "VIIRS_NOAA21_NRT",
    "region_id": "tyumen",
-   "near_oopt": false
+   "near_oopt": false,
+   "first_seen": null
   },
   {
    "lat": 56.28674,
@@ -1084,7 +1054,8 @@
    "daynight": "D",
    "source": "VIIRS_NOAA21_NRT",
    "region_id": "tyumen",
-   "near_oopt": false
+   "near_oopt": false,
+   "first_seen": null
   },
   {
    "lat": 57.05972,
@@ -1096,7 +1067,8 @@
    "daynight": "D",
    "source": "VIIRS_NOAA21_NRT",
    "region_id": "tyumen",
-   "near_oopt": false
+   "near_oopt": false,
+   "first_seen": null
   },
   {
    "lat": 57.05988,
@@ -1108,115 +1080,8 @@
    "daynight": "D",
    "source": "VIIRS_NOAA21_NRT",
    "region_id": "tyumen",
-   "near_oopt": false
-  },
-  {
-   "lat": 56.20971,
-   "lon": 65.71655,
-   "acquired": "2026-10-24T08:30:00Z",
-   "satellite": "NOAA-20",
-   "confidence": "средняя",
-   "frp": 2.74,
-   "daynight": "D",
-   "source": "VIIRS_NOAA20_NRT",
-   "region_id": "tyumen",
-   "near_oopt": false
-  },
-  {
-   "lat": 56.23754,
-   "lon": 65.76759,
-   "acquired": "2026-10-24T08:30:00Z",
-   "satellite": "NOAA-20",
-   "confidence": "средняя",
-   "frp": 4.68,
-   "daynight": "D",
-   "source": "VIIRS_NOAA20_NRT",
-   "region_id": "tyumen",
-   "near_oopt": false
-  },
-  {
-   "lat": 56.27888,
-   "lon": 65.7086,
-   "acquired": "2026-10-24T08:30:00Z",
-   "satellite": "NOAA-20",
-   "confidence": "средняя",
-   "frp": 55.39,
-   "daynight": "D",
-   "source": "VIIRS_NOAA20_NRT",
-   "region_id": "tyumen",
-   "near_oopt": false
-  },
-  {
-   "lat": 56.28058,
-   "lon": 65.69404,
-   "acquired": "2026-10-24T08:30:00Z",
-   "satellite": "NOAA-20",
-   "confidence": "средняя",
-   "frp": 13.57,
-   "daynight": "D",
-   "source": "VIIRS_NOAA20_NRT",
-   "region_id": "tyumen",
-   "near_oopt": false
-  },
-  {
-   "lat": 56.28142,
-   "lon": 65.70063,
-   "acquired": "2026-10-24T08:30:00Z",
-   "satellite": "NOAA-20",
-   "confidence": "средняя",
-   "frp": 13.57,
-   "daynight": "D",
-   "source": "VIIRS_NOAA20_NRT",
-   "region_id": "tyumen",
-   "near_oopt": false
-  },
-  {
-   "lat": 56.2831,
-   "lon": 65.71384,
-   "acquired": "2026-10-24T08:30:00Z",
-   "satellite": "NOAA-20",
-   "confidence": "средняя",
-   "frp": 55.39,
-   "daynight": "D",
-   "source": "VIIRS_NOAA20_NRT",
-   "region_id": "tyumen",
-   "near_oopt": false
-  },
-  {
-   "lat": 56.28563,
-   "lon": 65.70585,
-   "acquired": "2026-10-24T08:30:00Z",
-   "satellite": "NOAA-20",
-   "confidence": "средняя",
-   "frp": 6.11,
-   "daynight": "D",
-   "source": "VIIRS_NOAA20_NRT",
-   "region_id": "tyumen",
-   "near_oopt": false
-  },
-  {
-   "lat": 57.05971,
-   "lon": 65.03577,
-   "acquired": "2026-10-24T08:30:00Z",
-   "satellite": "NOAA-20",
-   "confidence": "средняя",
-   "frp": 7.7,
-   "daynight": "D",
-   "source": "VIIRS_NOAA20_NRT",
-   "region_id": "tyumen",
-   "near_oopt": false
-  },
-  {
-   "lat": 57.06057,
-   "lon": 65.04242,
-   "acquired": "2026-10-24T08:30:00Z",
-   "satellite": "NOAA-20",
-   "confidence": "средняя",
-   "frp": 7.7,
-   "daynight": "D",
-   "source": "VIIRS_NOAA20_NRT",
-   "region_id": "tyumen",
-   "near_oopt": false
+   "near_oopt": false,
+   "first_seen": null
   },
   {
    "lat": 55.64595,
@@ -1228,7 +1093,8 @@
    "daynight": "N",
    "source": "VIIRS_NOAA20_NRT",
    "region_id": "moscow",
-   "near_oopt": false
+   "near_oopt": false,
+   "first_seen": null
   },
   {
    "lat": 55.22297,
@@ -1240,7 +1106,8 @@
    "daynight": "N",
    "source": "VIIRS_NOAA20_NRT",
    "region_id": "moscow-oblast",
-   "near_oopt": false
+   "near_oopt": false,
+   "first_seen": null
   },
   {
    "lat": 55.0598,
@@ -1252,7 +1119,8 @@
    "daynight": "N",
    "source": "VIIRS_NOAA21_NRT",
    "region_id": "moscow-oblast",
-   "near_oopt": false
+   "near_oopt": false,
+   "first_seen": null
   },
   {
    "lat": 55.58956,
@@ -1264,7 +1132,8 @@
    "daynight": "N",
    "source": "VIIRS_NOAA21_NRT",
    "region_id": "moscow-oblast",
-   "near_oopt": false
+   "near_oopt": false,
+   "first_seen": null
   },
   {
    "lat": 55.05943,
@@ -1276,7 +1145,8 @@
    "daynight": "N",
    "source": "VIIRS_NOAA20_NRT",
    "region_id": "moscow-oblast",
-   "near_oopt": false
+   "near_oopt": false,
+   "first_seen": null
   },
   {
    "lat": 55.06178,
@@ -1288,7 +1158,8 @@
    "daynight": "N",
    "source": "VIIRS_NOAA20_NRT",
    "region_id": "moscow-oblast",
-   "near_oopt": false
+   "near_oopt": false,
+   "first_seen": null
   },
   {
    "lat": 55.17836,
@@ -1300,7 +1171,8 @@
    "daynight": "N",
    "source": "VIIRS_NOAA20_NRT",
    "region_id": "moscow-oblast",
-   "near_oopt": false
+   "near_oopt": false,
+   "first_seen": null
   },
   {
    "lat": 55.25807,
@@ -1312,7 +1184,8 @@
    "daynight": "N",
    "source": "VIIRS_NOAA20_NRT",
    "region_id": "moscow-oblast",
-   "near_oopt": false
+   "near_oopt": false,
+   "first_seen": null
   },
   {
    "lat": 55.33799,
@@ -1324,7 +1197,8 @@
    "daynight": "N",
    "source": "VIIRS_NOAA20_NRT",
    "region_id": "moscow-oblast",
-   "near_oopt": false
+   "near_oopt": false,
+   "first_seen": null
   },
   {
    "lat": 55.64069,
@@ -1336,7 +1210,8 @@
    "daynight": "N",
    "source": "VIIRS_NOAA21_NRT",
    "region_id": "moscow-oblast",
-   "near_oopt": false
+   "near_oopt": false,
+   "first_seen": null
   },
   {
    "lat": 56.53485,
@@ -1348,7 +1223,8 @@
    "daynight": "N",
    "source": "VIIRS_NOAA21_NRT",
    "region_id": "moscow-oblast",
-   "near_oopt": false
+   "near_oopt": false,
+   "first_seen": null
   },
   {
    "lat": 55.7595,
@@ -1360,7 +1236,8 @@
    "daynight": "D",
    "source": "VIIRS_NOAA20_NRT",
    "region_id": "moscow-oblast",
-   "near_oopt": false
+   "near_oopt": false,
+   "first_seen": null
   },
   {
    "lat": 55.7617,
@@ -1372,7 +1249,8 @@
    "daynight": "D",
    "source": "VIIRS_NOAA20_NRT",
    "region_id": "moscow-oblast",
-   "near_oopt": false
+   "near_oopt": false,
+   "first_seen": null
   },
   {
    "lat": 55.76442,
@@ -1384,7 +1262,8 @@
    "daynight": "D",
    "source": "VIIRS_NOAA21_NRT",
    "region_id": "moscow-oblast",
-   "near_oopt": false
+   "near_oopt": false,
+   "first_seen": null
   },
   {
    "lat": 55.05966,
@@ -1396,7 +1275,8 @@
    "daynight": "N",
    "source": "VIIRS_NOAA21_NRT",
    "region_id": "moscow-oblast",
-   "near_oopt": false
+   "near_oopt": false,
+   "first_seen": null
   },
   {
    "lat": 55.35367,
@@ -1408,7 +1288,8 @@
    "daynight": "N",
    "source": "VIIRS_NOAA21_NRT",
    "region_id": "moscow-oblast",
-   "near_oopt": false
+   "near_oopt": false,
+   "first_seen": null
   },
   {
    "lat": 55.11504,
@@ -1420,7 +1301,8 @@
    "daynight": "N",
    "source": "VIIRS_NOAA20_NRT",
    "region_id": "moscow-oblast",
-   "near_oopt": false
+   "near_oopt": false,
+   "first_seen": null
   },
   {
    "lat": 55.40808,
@@ -1432,7 +1314,8 @@
    "daynight": "N",
    "source": "VIIRS_NOAA20_NRT",
    "region_id": "moscow-oblast",
-   "near_oopt": false
+   "near_oopt": false,
+   "first_seen": null
   },
   {
    "lat": 56.22168,
@@ -1444,7 +1327,8 @@
    "daynight": "N",
    "source": "VIIRS_NOAA20_NRT",
    "region_id": "moscow-oblast",
-   "near_oopt": false
+   "near_oopt": false,
+   "first_seen": null
   },
   {
    "lat": 55.17605,
@@ -1456,7 +1340,8 @@
    "daynight": "N",
    "source": "VIIRS_NOAA21_NRT",
    "region_id": "moscow-oblast",
-   "near_oopt": false
+   "near_oopt": false,
+   "first_seen": null
   },
   {
    "lat": 55.17631,
@@ -1468,7 +1353,8 @@
    "daynight": "N",
    "source": "VIIRS_NOAA21_NRT",
    "region_id": "moscow-oblast",
-   "near_oopt": false
+   "near_oopt": false,
+   "first_seen": null
   },
   {
    "lat": 56.1527,
@@ -1480,7 +1366,8 @@
    "daynight": "N",
    "source": "VIIRS_NOAA21_NRT",
    "region_id": "moscow-oblast",
-   "near_oopt": false
+   "near_oopt": false,
+   "first_seen": null
   },
   {
    "lat": 56.15462,
@@ -1492,7 +1379,8 @@
    "daynight": "N",
    "source": "VIIRS_NOAA21_NRT",
    "region_id": "moscow-oblast",
-   "near_oopt": false
+   "near_oopt": false,
+   "first_seen": null
   }
  ]
 }
