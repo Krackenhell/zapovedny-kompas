@@ -135,6 +135,7 @@ textarea:focus,.btn:focus-visible,.kind:focus-visible,.chip:focus-visible{outlin
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 
 .region-bar{display:flex;align-items:center;gap:10px;padding:8px 16px;flex:none;background:var(--surface);border-bottom:1px solid var(--line);font-size:.8rem}.region-bar label{color:var(--muted)}.region-bar select{min-width:0;flex:1;max-width:380px;font:inherit;color:var(--ink);background:var(--bg);border:1px solid var(--line);padding:8px;border-radius:8px}.region-bar span{font:400 .7rem var(--mono);color:var(--muted)}.zone-search{position:absolute;z-index:500;top:10px;left:12px;width:min(360px,calc(100% - 24px));height:40px;border:1px solid var(--line);border-radius:10px;padding:9px 12px;background:var(--surface);color:var(--ink);font:inherit;box-shadow:0 2px 8px #0001}.chips{top:60px}.pickbar{top:108px}.empty-chips{padding:9px;background:var(--surface);font-size:.8rem;border-radius:8px}.fire-filter{display:flex;gap:8px;align-items:center;font-size:.9rem}.load-error{padding:12px;background:var(--surface);border:1px solid var(--fire);color:var(--ink)}
+.fire-period{display:flex;align-items:center;gap:10px;font-size:.85rem}.fire-period select{flex:1;min-width:0;padding:9px;background:var(--surface);color:var(--ink);border:1px solid var(--line);border-radius:8px;font:inherit}.fire .observation{grid-column:2/4;font-size:.75rem;line-height:1.6;color:var(--muted);overflow-wrap:anywhere}.fire.history .ico{filter:grayscale(1);opacity:.65}.fire.history{border-style:dashed}.fire-period-hint{font-size:.8rem;color:var(--muted)}
 </style>
 </head>
 <body>
@@ -196,8 +197,8 @@ textarea:focus,.btn:focus-visible,.kind:focus-visible,.chip:focus-visible{outlin
 
     <section class="tab" id="tab-fires" role="tabpanel" aria-label="Пожары">
       <div class="page">
-        <div><h2>Огонь у границы</h2><p class="lead">Спутниковые сигналы NASA по выбранному региону за последние 48 часов. Можно оставить только точки не дальше 5 км от загруженных ООПТ. Обновление запрашивается раз в час.</p></div>
-        <label class="fire-filter"><input type="checkbox" id="fires-near"> Только рядом с ООПТ (до 5 км)</label><div class="meta" id="fires-meta">Загрузка…</div>
+        <div><h2>Огонь у границы</h2><p class="lead">Спутниковые наблюдения NASA по выбранному региону. Время у точки — время съёмки, а не подтверждение пожара сейчас. Запросы настроены раз в час, но возможны задержки. Между пролётами есть перерывы.</p></div>
+        <label class="fire-period">Время съёмки <select id="fires-period" aria-label="Давность спутниковой съёмки"><option value="6">Последние 6 часов</option><option value="12">Последние 12 часов</option><option value="24">Последние 24 часа</option><option value="48">История за 48 часов</option></select></label><label class="fire-filter"><input type="checkbox" id="fires-near"> Только рядом с ООПТ (до 5 км)</label><div class="meta" id="fires-meta">Загрузка…</div>
         <div id="fires-list" style="display:flex;flex-direction:column;gap:10px"></div>
         <button class="btn primary wide" id="fires-sub">🔔 Оповещения бота по Ишимскому округу</button>
         <p class="note">Карта охватывает три региона. Подписка в боте пока действует только для Ишимского округа.</p><div class="send-links" id="fires-links">
@@ -602,24 +603,36 @@ function ago(iso) {
   if (m < 48 * 60) return `${Math.round(m / 60)} ч назад`;
   return new Date(iso).toLocaleDateString("ru-RU", {day: "numeric", month: "long"});
 }
+function observationTime(iso){
+  return new Date(iso).toLocaleString('ru-RU',{day:'numeric',month:'short',hour:'2-digit',minute:'2-digit',timeZoneName:'short'});
+}
 function renderFires(d) {
   fireData=d;
   const snapshot=d.regions?.[selectedRegion];
   const stale=!snapshot?.updated || Date.now()-Date.parse(snapshot.updated)>3*3600e3;
   const failed=!snapshot || snapshot.status!=='ok';
   const all=(snapshot?.fires||[]).filter(f=>Date.now()-Date.parse(f.acquired)<48*3600e3);
-  FIRES=all.filter(f=>!$('#fires-near').checked || f.near_oopt);
-  const when=snapshot?.updated?new Date(snapshot.updated).toLocaleString('ru-RU',{day:'numeric',month:'short',hour:'2-digit',minute:'2-digit'}):'ещё нет';
-  $('#fires-meta').textContent=(failed?'Сбой обновления. ':stale?'Данные устарели. ':'')+'Последняя успешная проверка: '+when+' · в регионе: '+all.length+' · показано: '+FIRES.length;
-  $('#fires-dot').classList.toggle('on',all.some(f=>Date.now()-Date.parse(f.acquired)<24*3600e3));
+  const hours=Number($('#fires-period').value);
+  FIRES=all.filter(f=>Date.now()-Date.parse(f.acquired)<hours*3600e3 && (!$('#fires-near').checked || f.near_oopt));
+  const when=snapshot?.updated?observationTime(snapshot.updated):'ещё нет';
+  $('#fires-meta').textContent=(failed?'Сбой обновления. ':stale?'Данные устарели. ':'')+'NASA проверена: '+when+' · наблюдений за 48 ч: '+all.length+' · показано: '+FIRES.length;
+  $('#fires-dot').classList.toggle('on',!failed&&!stale&&all.some(f=>Date.now()-Date.parse(f.acquired)<6*3600e3));
   const location=f=>f.near_oopt?(f.distance_m===0?'В контуре: ':fmtDist(f.distance_m)+' до ')+short(f.zone_name):'Термоточка в регионе';
-  $('#fires-list').innerHTML=FIRES.length?FIRES.map((f,i)=>
-    '<div class="card fire"><span class="ico">🔥</span><b>'+esc(location(f))+'</b><button class="btn" data-fire="'+i+'">На карте</button><span class="muted">'+ago(f.acquired)+' · '+esc(f.satellite)+' · уверенность '+esc(f.confidence)+'</span></div>').join(''):
-    '<div class="card empty"><b>'+(failed||stale?'Свежих данных нет':$('#fires-near').checked?'Вблизи загруженных ООПТ сигналов не найдено':'В регионе сигналов не найдено')+'</b><p class="muted">'+(failed||stale?'Не удалось подтвердить текущую обстановку. Попробуйте позднее.':'Спутники могут пропустить огонь. Отсутствие термоточек не гарантирует отсутствие пожаров.')+'</p></div>';
+  $('#fires-list').innerHTML=FIRES.length?FIRES.map((f,i)=>{
+    const historical=Date.now()-Date.parse(f.acquired)>6*3600e3;
+    const receipt=f.first_seen?'Впервые получено сервисом: '+observationTime(f.first_seen):'Время первого получения этого наблюдения не записывалось';
+    return '<div class="card fire '+(historical?'history':'')+'"><span class="ico">'+(historical?'◷':'🔥')+'</span><b>'+esc(location(f))+'</b><button class="btn" data-fire="'+i+'">На карте</button><span class="muted">'+(historical?'История · ':'Съёмка · ')+ago(f.acquired)+' · '+esc(f.satellite)+'</span><div class="observation">Спутник наблюдал: '+esc(observationTime(f.acquired))+'<br>'+esc(receipt)+'<br>Уверенность алгоритма: '+esc(f.confidence)+'; пожар на месте не подтверждён.<br>Координаты: '+fmtC(f.lat,f.lon)+'</div></div>';
+  }).join(''):
+    '<div class="card empty"><b>'+(failed||stale?'Свежих данных нет':'За выбранные '+hours+' ч '+($('#fires-near').checked?'рядом с загруженными ООПТ ':'')+'наблюдений не найдено')+'</b><p class="muted">'+(failed||stale?'Не удалось подтвердить текущую обстановку. Попробуйте позднее.':'Между съёмками бывают перерывы; облака и другие условия могут скрыть огонь. Отсутствие термоточек не гарантирует отсутствие пожаров.')+'</p>'+((hours<48&&all.length)?'<button class="btn" id="show-fire-history">Показать историю за 48 часов</button>':'')+'</div>';
   fireLayer.clearLayers();
-  FIRES.forEach(f=>L.circleMarker([f.lat,f.lon],{radius:f.near_oopt?8:5,color:'#fff',weight:1.5,fillColor:cssVar('--fire'),fillOpacity:.9}).bindTooltip(esc(location(f))+' · '+ago(f.acquired)).addTo(fireLayer));
+  FIRES.forEach(f=>{
+    const historical=Date.now()-Date.parse(f.acquired)>6*3600e3;
+    L.circleMarker([f.lat,f.lon],{radius:f.near_oopt?8:5,color:'#fff',weight:1.5,fillColor:cssVar(historical?'--muted':'--fire'),fillOpacity:historical ? .55 : .9}).bindTooltip(esc(location(f))+' · Съёмка: '+esc(observationTime(f.acquired))).addTo(fireLayer);
+  });
 }
 $('#fires-near').addEventListener('change',()=>{if(fireData)renderFires(fireData)});
+$('#fires-period').addEventListener('change',()=>{if(fireData)renderFires(fireData)});
+$('#fires-list').addEventListener('click',e=>{if(e.target.closest('#show-fire-history')){$('#fires-period').value='48';renderFires(fireData)}});
 $("#fires-list").addEventListener("click", e => {
   const b = e.target.closest("[data-fire]"); if (!b) return;
   const f = FIRES[+b.dataset.fire]; go("map"); checkPoint(f.lat, f.lon, {fly: true});

@@ -127,6 +127,12 @@ def update(data, old, key, fetcher=fetch_points, now=None):
                 points.extend(fetcher(key, source, region, now))
             zones = [z for z in data["zones"] if rid in z["region_ids"]]
             fires = enrich(points, region, zones)
+            identity = lambda f: (f['lat'], f['lon'], f['acquired'], f['satellite'])
+            known = {identity(f): f for f in previous.get('fires', [])}
+            for fire in fires:
+                prior = known.get(identity(fire))
+                # Legacy snapshots did not record receipt time; do not invent it.
+                fire['first_seen'] = prior.get('first_seen') if prior is not None else stamp
             snapshot = {"status":"ok", "updated":stamp, "attempted":stamp, "checked_points":len(fires), "fires":fires}
         except Exception:
             snapshot = {**previous, "status":"error", "attempted":stamp,

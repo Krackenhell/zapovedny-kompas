@@ -58,4 +58,17 @@ class RegionalFiresTests(unittest.TestCase):
         self.assertTrue(result['near_oopt'])
         self.assertEqual(result['distance_m'],0)
 
+class ReceiptTimeTests(unittest.TestCase):
+    setUp = RegionalFiresTests.setUp
+    point = RegionalFiresTests.point
+    def test_first_receipt_is_preserved_on_refresh(self):
+        first=f.update(self.data,{},'test',lambda *a:[self.point()],self.now)
+        later=f.update(self.data,first,'test',lambda *a:[self.point()],self.now+timedelta(hours=1))
+        self.assertEqual(first['fires'][0]['first_seen'],'2026-10-25T12:00:00Z')
+        self.assertEqual(later['fires'][0]['first_seen'],first['fires'][0]['first_seen'])
+    def test_legacy_observation_has_unknown_receipt_time(self):
+        old={'regions':{'r':{'fires':[self.point()]}}}
+        result=f.update(self.data,old,'test',lambda *a:[self.point()],self.now)
+        self.assertIsNone(result['fires'][0]['first_seen'])
+
 if __name__=='__main__':unittest.main()
