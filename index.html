@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1">
 <title>Заповедный компас</title>
-<meta name="description" content="Карта ООПТ Ишимского округа: где можно, где нельзя, сообщение инспектору, огонь у границы.">
+<meta name="description" content="Карта ООПТ Тюменской области, Москвы и Подмосковья: где можно, где нельзя, сообщение инспектору, огонь у границы.">
 <link rel="icon" href="logo.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -133,19 +133,22 @@ textarea:focus,.btn:focus-visible,.kind:focus-visible,.chip:focus-visible{outlin
 .far .leaflet-tooltip.zone-label{display:none}
 @media (min-width:900px){.sheet{left:12px;right:auto;width:400px;bottom:12px;border-radius:20px;max-height:calc(100% - 70px)}.fab.locate,.hint{bottom:16px}}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+
+.region-bar{display:flex;align-items:center;gap:10px;padding:8px 16px;flex:none;background:var(--surface);border-bottom:1px solid var(--line);font-size:.8rem}.region-bar label{color:var(--muted)}.region-bar select{min-width:0;flex:1;max-width:380px;font:inherit;color:var(--ink);background:var(--bg);border:1px solid var(--line);padding:8px;border-radius:8px}.region-bar span{font:400 .7rem var(--mono);color:var(--muted)}.zone-search{position:absolute;z-index:500;top:10px;left:12px;width:min(360px,calc(100% - 24px));height:40px;border:1px solid var(--line);border-radius:10px;padding:9px 12px;background:var(--surface);color:var(--ink);font:inherit;box-shadow:0 2px 8px #0001}.chips{top:60px}.pickbar{top:108px}.empty-chips{padding:9px;background:var(--surface);font-size:.8rem;border-radius:8px}.fire-filter{display:flex;gap:8px;align-items:center;font-size:.9rem}.load-error{padding:12px;background:var(--surface);border:1px solid var(--fire);color:var(--ink)}
 </style>
 </head>
 <body>
 <div class="app">
   <header class="top">
     <svg width="30" height="30" viewBox="0 0 26 26" aria-hidden="true"><circle cx="13" cy="13" r="11.5" fill="none" stroke="var(--zone)" stroke-width="1.6"/><path d="M13 4.5 16 13 13 21.5 10 13Z" fill="var(--lake)"/><circle cx="13" cy="13" r="1.6" fill="var(--surface)"/></svg>
-    <div><h1>Заповедный компас</h1><small>ООПТ Ишимского округа</small></div>
+    <div><h1>Заповедный компас</h1><small id="region-subtitle">Территории и спутниковые сигналы</small></div>
   </header>
 
+  <div class="region-bar"><label for="region-select">Регион</label><select id="region-select" aria-label="Регион" disabled><option>Загрузка…</option></select><span id="region-count"></span></div>
   <main>
     <section class="tab on" id="tab-map" role="tabpanel" aria-label="Карта">
       <div id="map" aria-label="Карта особо охраняемых природных территорий"></div>
-      <div class="chips" id="chips" role="list" aria-label="Территории"></div>
+      <input id="zone-search" class="zone-search" type="search" placeholder="Найти территорию…" aria-label="Поиск охраняемой территории"><div class="chips" id="chips" role="list" aria-label="Территории"></div>
       <div class="pickbar" id="pickbar"><span>👆 Нажмите на карту, где нарушение</span><button id="pick-cancel">Отмена</button></div>
       <div class="hint" id="hint">Нажмите на карту, чтобы проверить любое место</div>
       <button class="fab locate" id="locate"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 22s7-6.1 7-12a7 7 0 1 0-14 0c0 5.9 7 12 7 12Z"/><circle cx="12" cy="10" r="2.5"/></svg>Где я?</button>
@@ -162,7 +165,7 @@ textarea:focus,.btn:focus-visible,.kind:focus-visible,.chip:focus-visible{outlin
 
     <section class="tab" id="tab-report" role="tabpanel" aria-label="Сообщить">
       <div class="page">
-        <div><h2>Сообщить инспектору</h2><p class="lead">Машина у воды, костёр, мусор, пал, сети — укажите что и где, и сообщение уйдёт инспектору.</p></div>
+        <div><h2>Сообщить инспектору</h2><p class="lead">Укажите, что случилось и где. Сообщение сохранится в боте проекта. Передача сообщения в региональное ведомство пока не подключена.</p></div>
         <div class="card">
           <h3><b>1</b>Что случилось?</h3>
           <div class="kinds" id="kinds"></div>
@@ -193,11 +196,11 @@ textarea:focus,.btn:focus-visible,.kind:focus-visible,.chip:focus-visible{outlin
 
     <section class="tab" id="tab-fires" role="tabpanel" aria-label="Пожары">
       <div class="page">
-        <div><h2>Огонь у границы</h2><p class="lead">Термоточки со спутников NASA в пределах 5 км от заказников и памятников природы. Проверка — каждый час.</p></div>
-        <div class="meta" id="fires-meta">Загрузка…</div>
+        <div><h2>Огонь у границы</h2><p class="lead">Спутниковые сигналы NASA по выбранному региону за последние 48 часов. Можно оставить только точки не дальше 5 км от загруженных ООПТ. Обновление запрашивается раз в час.</p></div>
+        <label class="fire-filter"><input type="checkbox" id="fires-near"> Только рядом с ООПТ (до 5 км)</label><div class="meta" id="fires-meta">Загрузка…</div>
         <div id="fires-list" style="display:flex;flex-direction:column;gap:10px"></div>
-        <button class="btn primary wide" id="fires-sub">🔔 Присылать оповещения в чат</button>
-        <div class="send-links" id="fires-links">
+        <button class="btn primary wide" id="fires-sub">🔔 Оповещения бота по Ишимскому округу</button>
+        <p class="note">Карта охватывает три региона. Подписка в боте пока действует только для Ишимского округа.</p><div class="send-links" id="fires-links">
           <a class="btn" id="fires-link-tg" target="_blank" rel="noopener">Включить в Telegram</a>
           <a class="btn" id="fires-link-max" target="_blank" rel="noopener">Включить в MAX</a>
         </div>
@@ -257,6 +260,9 @@ function setTheme() {
   if (DATA) drawZones();
 }
 let DATA = null;
+let selectedRegion = "tyumen", fireData = null, needsRegionFit = false;
+const regionZones = () => DATA.zones.filter(z => z.region_ids.includes(selectedRegion));
+const pointRegion = (lat,lon) => DATA.regions.find(r => polys(r.geometry).some(p => inRing(p[0],lon,lat) && !p.slice(1).some(h => inRing(h,lon,lat))));
 setTheme();
 matchMedia("(prefers-color-scheme: dark)").addEventListener("change", setTheme);
 if (IN_TG) {
@@ -299,19 +305,20 @@ const fmtDist = m => m < 1000 ? `${Math.round(m / 10) * 10} м` : `${(m / 1000).
 const fmtC = (lat, lon) => `${lat.toFixed(5)}, ${lon.toFixed(5)}`;
 
 function check(lat, lon) {
-  const c = DATA.coverage;
-  if (!(lat >= c.min_lat && lat <= c.max_lat && lon >= c.min_lon && lon <= c.max_lon)) return {lat, lon, cover: false, hits: []};
-  const hits = DATA.zones.map(z => {
-    const d = distM(z.geometry, lat, lon), lim = DATA.near_distance_m[z.precise ? "precise" : "approximate"];
-    return {z, d, st: d === 0 ? "in" : d <= lim ? "near" : "out"};
-  }).sort((a, b) => a.d - b.d || (a.z.precise ? -1 : 1));
-  return {lat, lon, cover: true, hits};
+  if (!DATA || !Number.isFinite(lat) || !Number.isFinite(lon)) return {lat,lon,cover:false,hits:[]};
+  const region=pointRegion(lat,lon);
+  if (!region) return {lat,lon,cover:false,hits:[]};
+  const hits=DATA.zones.filter(z=>z.region_ids.includes(region.id)).map(z=>{
+    const d=distM(z.geometry,lat,lon),lim=DATA.near_distance_m[z.precise?'precise':'approximate'];
+    return {z,d,st:d===0?'in':d<=lim?'near':'out'};
+  }).sort((a,b)=>a.d-b.d || Number(b.z.precise)-Number(a.z.precise));
+  return {lat,lon,cover:true,hits,region};
 }
 function placeLabel(r) {
-  if (!r.cover) return "вне Ишимского округа";
-  const inn = r.hits.filter(h => h.st === "in");
-  if (inn.length) return "внутри: " + inn[0].z.name + (inn[0].z.precise ? "" : " (ориентировочно)");
-  return `${fmtDist(r.hits[0].d)} до границы: ${r.hits[0].z.name}`;
+  if(!r.cover) return 'За пределами подключённых регионов';
+  const inn=r.hits.find(h=>h.st==='in');
+  if(inn) return 'Внутри контура: '+inn.z.name+(inn.z.precise?'':' (ориентировочно)');
+  return r.hits.length?fmtDist(r.hits[0].d)+' до: '+r.hits[0].z.name:'Нет загруженных территорий рядом';
 }
 
 /* ---------- карточка результата ---------- */
@@ -319,10 +326,11 @@ const PHONE = () => DATA.inspector.phone;
 const telHref = () => "tel:+7" + PHONE().replace(/\D/g, "").replace(/^[78](?=\d{10}$)/, "");
 function srcLine(z) {
   const t = esc(z.source.title);
-  return `<div class="src">Источник: ${z.source.url ? `<a href="${esc(z.source.url)}" target="_blank" rel="noopener">${t}</a>` : t}</div>`;
+  return `<div class="src">Источник: ${z.source.url ? `<a href="${esc(z.source.url)}" target="_blank" rel="noopener">${t}</a>` : t}${(z.references||[]).map(ref=>`<br><a href="${esc(ref.url)}" target="_blank" rel="noopener">${esc(ref.title)}</a>`).join("")}</div>`;
 }
 function regimeHtml(z, brief) {
   const r = z.regime;
+  if(z.catalog_import) return `<div class="unpub"><div><b>Правила ещё не проверены.</b><p class="muted">Контур взят из OpenStreetMap и не является юридически точной границей. Отсутствие правил в приложении не означает, что здесь всё разрешено. Уточните режим у администрации территории.</p></div></div>`;
   if (r.published) return `<h3>Здесь запрещено</h3><ul>${r.forbidden.map(x => `<li>${esc(x)}</li>`).join("")}</ul>${r.advice && !brief ? `<p class="muted" style="margin:8px 0 0">💡 ${esc(r.advice)}</p>` : ""}`;
   return `<div class="unpub"><span>⚪️</span><div><b>Режим не опубликован.</b> <span class="muted">Положение о территории не найдено в открытом доступе, поэтому запреты не называем. Перед охотой, рыбалкой, костром или въездом на машине уточните у инспекции.</span></div></div>
     <div class="row" style="margin-top:10px"><a class="btn" href="${telHref()}">📞 ${esc(PHONE())}</a></div>`;
@@ -338,8 +346,8 @@ function zoneBlock(h, mode) {
 function resultHtml(r) {
   let badge, title, sub, blocks = [];
   if (!r.cover) {
-    badge = "b-none"; title = "Точка за пределами Ишимского округа";
-    sub = "Пока сервис знает только ООПТ Ишима и окрестностей.";
+    badge = "b-none"; title = "Точка за пределами подключённых регионов";
+    sub = "Подключены юг Тюменской области, Москва и Московская область. Каталог пока неполный.";
   } else {
     const inn = r.hits.filter(h => h.st === "in"), near = r.hits.filter(h => h.st === "near");
     const precIn = inn.filter(h => h.z.precise);
@@ -354,8 +362,8 @@ function resultHtml(r) {
       blocks = near.map(h => zoneBlock(h, "near"));
     } else {
       const n = r.hits[0];
-      badge = "b-out"; title = "Вне ООПТ"; sub = `Ближайшая: ${n.z.name}, ${fmtDist(n.d)}`;
-      blocks = [`<div class="block"><p class="muted" style="margin:0">Охраняемых природных территорий в этой точке нет. Общие правила пожарной безопасности, охоты и рыбалки действуют везде — по ним ответит инспекция: <a href="${telHref()}">${esc(PHONE())}</a>.</p>${srcLine(n.z)}</div>`];
+      badge = "b-none"; title = "В загруженных контурах ООПТ не найдено"; sub = n ? `Ближайшая в каталоге: ${n.z.name}, ${fmtDist(n.d)}` : "Каталог этого региона ещё пополняется";
+      blocks = [`<div class="block"><p class="muted" style="margin:0">Каталог неполный, а часть границ ориентировочная. Этот результат не подтверждает отсутствие охраны и не разрешает охоту, костры или въезд. Уточните статус места у администрации территории.</p>${n ? srcLine(n.z) : ""}</div>`];
     }
   }
   return `<div class="res">
@@ -366,7 +374,7 @@ function resultHtml(r) {
 }
 
 /* ---------- карта ---------- */
-const map = L.map("map", {zoomControl: false, fadeAnimation: false}).setView([56.1, 69.42], 9);
+const map = L.map("map", {zoomControl: false, fadeAnimation: false, preferCanvas: true}).setView([56.1, 69.42], 9);
 L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {maxZoom: 18, attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'}).addTo(map);
 map.attributionControl.setPrefix(false);
 const labelsByZoom = () => $("#map").classList.toggle("far", map.getZoom() < 11);
@@ -385,7 +393,8 @@ function styleZone(z) {
 }
 function drawZones() {
   Object.values(zoneLayers).forEach(l => map.removeLayer(l));
-  for (const z of DATA.zones) {
+  for (const key of Object.keys(zoneLayers)) delete zoneLayers[key];
+  for (const z of regionZones()) {
     const l = L.geoJSON(z.geometry, {style: styleZone(z), interactive: false}).addTo(map);
     l.bindTooltip(short(z.name), {permanent: true, direction: "center", className: "zone-label"});
     zoneLayers[z.id] = l;
@@ -393,8 +402,10 @@ function drawZones() {
   fireLayer.bringToFront && fireLayer.eachLayer(m => m.bringToFront());
 }
 function renderChips() {
-  $("#chips").innerHTML = DATA.zones.map(z =>
-    `<button class="chip" role="listitem" data-zone="${z.id}"><i style="background:${z.precise ? "var(--fire)" : "var(--straw)"}"></i>${esc(short(z.name))}</button>`).join("");
+  const query=$("#zone-search").value.trim().toLocaleLowerCase("ru");
+  const matches=regionZones().filter(z=>z.name.toLocaleLowerCase("ru").includes(query));
+  $("#chips").innerHTML = matches.map(z =>
+    `<button class="chip" role="listitem" data-zone="${z.id}"><i style="background:${z.precise ? "var(--fire)" : "var(--straw)"}"></i>${esc(short(z.name))}</button>`).join("") || '<span class="empty-chips">В каталоге региона ничего не найдено</span>';
 }
 $("#chips").addEventListener("click", e => {
   const b = e.target.closest("[data-zone]"); if (!b) return;
@@ -413,7 +424,9 @@ function setPin(lat, lon) {
   if (pinMarker) pinMarker.setLatLng([lat, lon]); else pinMarker = L.marker([lat, lon], {icon, keyboard: false, interactive: false}).addTo(map);
 }
 function checkPoint(lat, lon, opts = {}) {
+  if(!DATA) { toast("Границы ещё загружаются"); return; }
   const r = check(lat, lon);
+  if(r.region && r.region.id!==selectedRegion) selectRegion(r.region.id,false);
   lastResult = r;
   $("#sheet-acts").classList.add("on");
   setPin(lat, lon);
@@ -453,6 +466,7 @@ $("#sheet-acts").addEventListener("click", e => {
   }
 });
 map.on("click", e => {
+  if(!DATA){toast("Границы ещё загружаются");return;}
   const {lat, lng} = e.latlng;
   if (picking) return finishPick(lat, lng);
   checkPoint(lat, lng);
@@ -501,7 +515,7 @@ function go(tab) {
   current = tab;
   document.querySelectorAll("nav.tabs button").forEach(b => b.setAttribute("aria-selected", b.dataset.tab === tab));
   document.querySelectorAll(".tab").forEach(s => s.classList.toggle("on", s.id === "tab-" + tab));
-  if (tab === "map") setTimeout(() => map.invalidateSize(), 0);
+  if (tab === "map") { map.invalidateSize(); if(needsRegionFit) fitRegion(); }
   if (tab === "about" && !$("#tab-about iframe")) $("#tab-about").innerHTML = '<iframe src="pitch.html" title="О проекте «Заповедный компас»"></iframe>';
   backBtn();
 }
@@ -531,6 +545,7 @@ $("#kinds").addEventListener("click", e => {
   $("#rep-err").textContent = "";
 });
 function renderPoint() {
+  if(!DATA){toast("Данные ещё загружаются");return;}
   const w = $("#rep-where");
   if (!report.point) { w.className = "where"; w.textContent = "Точка не выбрана"; return; }
   const r = check(report.point.lat, report.point.lon);
@@ -562,6 +577,7 @@ function openBot(payload) {
   return false;
 }
 $("#rep-send").onclick = () => {
+  if(!DATA){$("#rep-err").textContent="Данные ещё загружаются. Попробуйте позднее.";return;}
   if (!report.kind) { $("#rep-err").textContent = "Выберите, что случилось."; return; }
   if (!report.point) { $("#rep-err").textContent = "Укажите место: «Я здесь» или «На карте»."; return; }
   haptic("medium");
@@ -587,22 +603,23 @@ function ago(iso) {
   return new Date(iso).toLocaleDateString("ru-RU", {day: "numeric", month: "long"});
 }
 function renderFires(d) {
-  FIRES = d.fires || [];
-  const when = d.updated ? new Date(d.updated).toLocaleString("ru-RU", {day: "numeric", month: "short", hour: "2-digit", minute: "2-digit"}) : "—";
-  $("#fires-meta").textContent = `Обновлено ${when} · термоточек в округе за 48 ч: ${d.checked_points ?? 0}`;
-  $("#fires-dot").classList.toggle("on", FIRES.some(f => Date.now() - Date.parse(f.acquired) < 24 * 3600e3));
-  $("#fires-list").innerHTML = FIRES.length ? FIRES.map((f, i) => `
-    <div class="card fire">
-      <span class="ico">🔥</span>
-      <b>${f.distance_m === 0 ? "Внутри: " : fmtDist(f.distance_m) + " до "}${esc(short(f.zone_name))}</b>
-      <button class="btn" data-fire="${i}">На карте</button>
-      <span class="muted">${ago(f.acquired)} · ${esc(f.satellite)} · уверенность ${esc(f.confidence)}</span>
-    </div>`).join("")
-    : `<div class="card empty"><div class="big">🌲</div><b>Огня у заказников не видно</b><p class="muted" style="margin:6px 0 0">За последние 48 часов спутники не нашли термоточек ближе 5 км к ООПТ округа.</p></div>`;
+  fireData=d;
+  const snapshot=d.regions?.[selectedRegion];
+  const stale=!snapshot?.updated || Date.now()-Date.parse(snapshot.updated)>3*3600e3;
+  const failed=!snapshot || snapshot.status!=='ok';
+  const all=(snapshot?.fires||[]).filter(f=>Date.now()-Date.parse(f.acquired)<48*3600e3);
+  FIRES=all.filter(f=>!$('#fires-near').checked || f.near_oopt);
+  const when=snapshot?.updated?new Date(snapshot.updated).toLocaleString('ru-RU',{day:'numeric',month:'short',hour:'2-digit',minute:'2-digit'}):'ещё нет';
+  $('#fires-meta').textContent=(failed?'Сбой обновления. ':stale?'Данные устарели. ':'')+'Последняя успешная проверка: '+when+' · в регионе: '+all.length+' · показано: '+FIRES.length;
+  $('#fires-dot').classList.toggle('on',all.some(f=>Date.now()-Date.parse(f.acquired)<24*3600e3));
+  const location=f=>f.near_oopt?(f.distance_m===0?'В контуре: ':fmtDist(f.distance_m)+' до ')+short(f.zone_name):'Термоточка в регионе';
+  $('#fires-list').innerHTML=FIRES.length?FIRES.map((f,i)=>
+    '<div class="card fire"><span class="ico">🔥</span><b>'+esc(location(f))+'</b><button class="btn" data-fire="'+i+'">На карте</button><span class="muted">'+ago(f.acquired)+' · '+esc(f.satellite)+' · уверенность '+esc(f.confidence)+'</span></div>').join(''):
+    '<div class="card empty"><b>'+(failed||stale?'Свежих данных нет':$('#fires-near').checked?'Вблизи загруженных ООПТ сигналов не найдено':'В регионе сигналов не найдено')+'</b><p class="muted">'+(failed||stale?'Не удалось подтвердить текущую обстановку. Попробуйте позднее.':'Спутники могут пропустить огонь. Отсутствие термоточек не гарантирует отсутствие пожаров.')+'</p></div>';
   fireLayer.clearLayers();
-  FIRES.forEach(f => L.circleMarker([f.lat, f.lon], {radius: 8, color: "#fff", weight: 2, fillColor: cssVar("--fire"), fillOpacity: 1})
-    .bindTooltip(`🔥 ${ago(f.acquired)}, ${f.distance_m === 0 ? "внутри ООПТ" : fmtDist(f.distance_m) + " до ООПТ"}`).addTo(fireLayer));
+  FIRES.forEach(f=>L.circleMarker([f.lat,f.lon],{radius:f.near_oopt?8:5,color:'#fff',weight:1.5,fillColor:cssVar('--fire'),fillOpacity:.9}).bindTooltip(esc(location(f))+' · '+ago(f.acquired)).addTo(fireLayer));
 }
+$('#fires-near').addEventListener('change',()=>{if(fireData)renderFires(fireData)});
 $("#fires-list").addEventListener("click", e => {
   const b = e.target.closest("[data-fire]"); if (!b) return;
   const f = FIRES[+b.dataset.fire]; go("map"); checkPoint(f.lat, f.lon, {fly: true});
@@ -616,22 +633,54 @@ $("#fires-sub").onclick = () => {
   }
 };
 
-/* ---------- загрузка данных ---------- */
-fetch("data/zones.json", {cache: "no-cache"}).then(r => r.json()).then(d => {
-  DATA = d; drawZones(); renderChips();
-  const fit = () => {
-    map.invalidateSize();
-    if (!map.getSize().y) return requestAnimationFrame(fit);  // вкладка ещё не разложена
-    map.fitBounds(L.featureGroup(Object.values(zoneLayers)).getBounds(), {padding: [30, 50], maxZoom: 11});
-    const q = new URLSearchParams(location.search);
-    if (q.get("lat") && q.get("lon")) checkPoint(+q.get("lat"), +q.get("lon"), {fly: true});
-  };
-  requestAnimationFrame(fit);
-}).catch(() => toast("Не удалось загрузить границы ООПТ"));
-fetch("data/fires.json", {cache: "no-cache"}).then(r => r.json()).then(renderFires)
-  .catch(() => { $("#fires-meta").textContent = "Данные о пожарах временно недоступны"; });
-const startTab = new URLSearchParams(location.search).get("tab");
-if (["report", "fires", "about"].includes(startTab)) go(startTab);
+/* ---------- регионы и загрузка данных ---------- */
+function fitRegion(){
+  if(!DATA||current!=='map')return;
+  map.invalidateSize();
+  if(!map.getSize().x||!map.getSize().y){requestAnimationFrame(fitRegion);return;}
+  const c=DATA.regions.find(r=>r.id===selectedRegion).coverage;
+  map.stop();map.fitBounds([[c.min_lat,c.min_lon],[c.max_lat,c.max_lon]],{padding:[30,90],maxZoom:10});needsRegionFit=false;
+}
+function selectRegion(id,fit=true){
+  if(!DATA?.regions.some(r=>r.id===id))return;
+  selectedRegion=id;$('#region-select').value=id;$('#zone-search').value='';
+  $('#region-count').textContent=regionZones().length+' ООПТ';
+  $('#region-subtitle').textContent='Каталог пополняется · границы справочные';
+  closeSheet();drawZones();renderChips();if(fireData)renderFires(fireData);
+  try{localStorage.setItem('kompas-region',id)}catch(e){}
+  if(fit){needsRegionFit=true;if(current==="map")fitRegion();}
+}
+$('#region-select').addEventListener('change',e=>selectRegion(e.target.value));
+$('#zone-search').addEventListener('input',renderChips);
+fetch('data/zones.json',{cache:'no-cache'}).then(r=>{if(!r.ok)throw Error();return r.json()}).then(d=>{
+  DATA=d;$('#region-select').innerHTML=d.regions.map(r=>'<option value="'+esc(r.id)+'">'+esc(r.name)+'</option>').join('');$('#region-select').disabled=false;
+  try{selectedRegion=localStorage.getItem('kompas-region')||selectedRegion}catch(e){}
+  const q=new URLSearchParams(location.search);if(q.has('region'))selectedRegion=q.get('region');
+  if(!d.regions.some(r=>r.id===selectedRegion))selectedRegion='tyumen';
+  requestAnimationFrame(()=>{map.invalidateSize();selectRegion(selectedRegion);if(q.has('lat')&&q.has('lon'))checkPoint(+q.get('lat'),+q.get('lon'),{fly:true});});
+}).catch(()=>{toast('Не удалось загрузить границы ООПТ');$('#chips').innerHTML='<span class="load-error">Границы недоступны. Обновите страницу.</span>';$('#locate').disabled=true;});
+async function loadFires(){
+  // Actions commits do not rebuild legacy Pages; read the current public snapshot directly.
+  const urls=location.hostname==='krackenhell.github.io'
+    ? ['https://raw.githubusercontent.com/Krackenhell/zapovedny-kompas/main/data/fires.json','data/fires.json']
+    : ['data/fires.json'];
+  for(const url of urls){
+    let timer;
+    try{
+      const controller=new AbortController();timer=setTimeout(()=>controller.abort(),15000);
+      const response=await fetch(url,{cache:'no-cache',signal:controller.signal});
+      if(!response.ok)throw Error();
+      const snapshot=await response.json();
+      if(!snapshot.regions)throw Error();
+      renderFires(snapshot);return;
+    }catch(e){}finally{clearTimeout(timer);}
+  }
+  $('#fires-meta').textContent='Данные о пожарах временно недоступны';
+  if(!fireData)$('#fires-list').innerHTML='<div class="card">Нет данных для оценки обстановки.</div>';
+}
+loadFires();setInterval(loadFires,5*60*1000);
+const startTab=new URLSearchParams(location.search).get('tab');
+if(['report','fires','about'].includes(startTab))go(startTab);
 </script>
 </body>
 </html>

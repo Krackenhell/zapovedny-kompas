@@ -1,0 +1,362 @@
+{
+  "retrieved": "2026-10-25",
+  "license": "ODbL 1.0",
+  "attribution": "© OpenStreetMap contributors",
+  "license_url": "https://www.openstreetmap.org/copyright",
+  "catalog_complete": false,
+  "regions": [
+    {
+      "id": "tyumen",
+      "name": "Тюменская область (юг)",
+      "source_url": "https://www.openstreetmap.org/relation/140291"
+    },
+    {
+      "id": "moscow",
+      "name": "Москва",
+      "source_url": "https://www.openstreetmap.org/relation/102269"
+    },
+    {
+      "id": "moscow-oblast",
+      "name": "Московская область",
+      "source_url": "https://www.openstreetmap.org/relation/51490"
+    }
+  ],
+  "zones": [
+    {
+      "id": "mineral",
+      "name": "Памятник природы «Минеральные озёра»",
+      "region_ids": [
+        "tyumen"
+      ],
+      "source": {
+        "title": "Постановление Правительства Тюменской области от 30.05.2005 № 48-п, режим особой охраны памятника природы «Минеральные озёра»",
+        "url": ""
+      },
+      "references": [],
+      "precise": true
+    },
+    {
+      "id": "klep",
+      "name": "Заказник «Клепиковский»",
+      "region_ids": [
+        "tyumen"
+      ],
+      "source": {
+        "title": "Лесной план Тюменской области, разд. 1.1.8 (перечень ООПТ, площадь)",
+        "url": ""
+      },
+      "references": [],
+      "precise": false
+    },
+    {
+      "id": "pesy",
+      "name": "Заказник «Песьяновский»",
+      "region_ids": [
+        "tyumen"
+      ],
+      "source": {
+        "title": "Лесной план Тюменской области, разд. 1.1.8 (перечень ООПТ, площадь)",
+        "url": ""
+      },
+      "references": [],
+      "precise": false
+    },
+    {
+      "id": "sinic",
+      "name": "Памятник природы «Синицынский бор»",
+      "region_ids": [
+        "tyumen"
+      ],
+      "source": {
+        "title": "Лесной план Тюменской области, разд. 1.1.8 (перечень ООПТ, площадь)",
+        "url": ""
+      },
+      "references": [],
+      "precise": false
+    },
+    {
+      "id": "osm-way-505333963",
+      "name": "Белоозёрский заказник",
+      "region_ids": [
+        "tyumen"
+      ],
+      "source": {
+        "title": "Контур OpenStreetMap, проверка каталога 25.10.2026",
+        "url": "https://www.openstreetmap.org/way/505333963"
+      },
+      "references": [],
+      "precise": false
+    },
+    {
+      "id": "osm-relation-6435834",
+      "name": "Битцевский парк",
+      "region_ids": [
+        "moscow"
+      ],
+      "source": {
+        "title": "Контур OpenStreetMap, проверка каталога 25.10.2026",
+        "url": "https://www.openstreetmap.org/relation/6435834"
+      },
+      "references": [],
+      "precise": false
+    },
+    {
+      "id": "osm-relation-10923244",
+      "name": "Заказник \"Озеро Глубокое\"",
+      "region_ids": [
+        "moscow-oblast"
+      ],
+      "source": {
+        "title": "Контур OpenStreetMap, проверка каталога 25.10.2026",
+        "url": "https://www.openstreetmap.org/relation/10923244"
+      },
+      "references": [],
+      "precise": false
+    },
+    {
+      "id": "osm-relation-12341554",
+      "name": "Заказник \"Черустинский лес\"",
+      "region_ids": [
+        "moscow-oblast"
+      ],
+      "source": {
+        "title": "Контур OpenStreetMap, проверка каталога 25.10.2026",
+        "url": "https://www.openstreetmap.org/relation/12341554"
+      },
+      "references": [],
+      "precise": false
+    },
+    {
+      "id": "osm-crane-homeland",
+      "name": "Заказник «Журавлиная родина»",
+      "region_ids": [
+        "moscow-oblast"
+      ],
+      "source": {
+        "title": "Контур OpenStreetMap, проверка каталога 25.10.2026",
+        "url": "https://www.openstreetmap.org/way/793430274"
+      },
+      "references": [
+        {
+          "title": "Контур OpenStreetMap, проверка каталога 25.10.2026",
+          "url": "https://www.openstreetmap.org/way/793161644"
+        }
+      ],
+      "precise": false
+    },
+    {
+      "id": "osm-relation-7203115",
+      "name": "Заказник «Звенигородская биостанция МГУ и карьер «Сима»",
+      "region_ids": [
+        "moscow-oblast"
+      ],
+      "source": {
+        "title": "Контур OpenStreetMap, проверка каталога 25.10.2026",
+        "url": "https://www.openstreetmap.org/relation/7203115"
+      },
+      "references": [],
+      "precise": false
+    },
+    {
+      "id": "osm-relation-3419541",
+      "name": "Ландшафтный заказник «Тёплый Стан»",
+      "region_ids": [
+        "moscow"
+      ],
+      "source": {
+        "title": "Контур OpenStreetMap, проверка каталога 25.10.2026",
+        "url": "https://www.openstreetmap.org/relation/3419541"
+      },
+      "references": [],
+      "precise": false
+    },
+    {
+      "id": "osm-relation-6410705",
+      "name": "Лохин остров",
+      "region_ids": [
+        "moscow-oblast"
+      ],
+      "source": {
+        "title": "Контур OpenStreetMap, проверка каталога 25.10.2026",
+        "url": "https://www.openstreetmap.org/relation/6410705"
+      },
+      "references": [],
+      "precise": false
+    },
+    {
+      "id": "osm-relation-11040434",
+      "name": "Москворецкий левобережный заказник",
+      "region_ids": [
+        "moscow-oblast"
+      ],
+      "source": {
+        "title": "Контур OpenStreetMap, проверка каталога 25.10.2026",
+        "url": "https://www.openstreetmap.org/relation/11040434"
+      },
+      "references": [],
+      "precise": false
+    },
+    {
+      "id": "osm-relation-9095779",
+      "name": "Москворецкий пойменный заказник",
+      "region_ids": [
+        "moscow-oblast"
+      ],
+      "source": {
+        "title": "Контур OpenStreetMap, проверка каталога 25.10.2026",
+        "url": "https://www.openstreetmap.org/relation/9095779"
+      },
+      "references": [],
+      "precise": false
+    },
+    {
+      "id": "osm-relation-1380523",
+      "name": "Национальный парк «Лосиный остров»",
+      "region_ids": [
+        "moscow",
+        "moscow-oblast"
+      ],
+      "source": {
+        "title": "Контур OpenStreetMap, проверка каталога 25.10.2026",
+        "url": "https://www.openstreetmap.org/relation/1380523"
+      },
+      "references": [],
+      "precise": false
+    },
+    {
+      "id": "osm-way-1278276756",
+      "name": "Памятник природы \"Семь ключей\"",
+      "region_ids": [
+        "moscow-oblast"
+      ],
+      "source": {
+        "title": "Контур OpenStreetMap, проверка каталога 25.10.2026",
+        "url": "https://www.openstreetmap.org/way/1278276756"
+      },
+      "references": [],
+      "precise": false
+    },
+    {
+      "id": "osm-relation-19621078",
+      "name": "Памятник природы «Лесопарк Затюменский»",
+      "region_ids": [
+        "tyumen"
+      ],
+      "source": {
+        "title": "Контур OpenStreetMap, проверка каталога 25.10.2026",
+        "url": "https://www.openstreetmap.org/relation/19621078"
+      },
+      "references": [
+        {
+          "title": "Пресс-центр Управления Росреестра по Тюменской области: природоохранные территории",
+          "url": "https://tyumedia.ru/295793.html"
+        }
+      ],
+      "precise": false
+    },
+    {
+      "id": "osm-way-104412092",
+      "name": "Приокско-Террасный государственный природный биосферный заповедник",
+      "region_ids": [
+        "moscow-oblast"
+      ],
+      "source": {
+        "title": "Контур OpenStreetMap, проверка каталога 25.10.2026",
+        "url": "https://www.openstreetmap.org/way/104412092"
+      },
+      "references": [],
+      "precise": false
+    },
+    {
+      "id": "osm-relation-1375854",
+      "name": "Природно-исторический парк «Тушинский»",
+      "region_ids": [
+        "moscow"
+      ],
+      "source": {
+        "title": "Контур OpenStreetMap, проверка каталога 25.10.2026",
+        "url": "https://www.openstreetmap.org/relation/1375854"
+      },
+      "references": [],
+      "precise": false
+    },
+    {
+      "id": "osm-relation-2587662",
+      "name": "Природный заказник \"Долина реки Сетунь\"",
+      "region_ids": [
+        "moscow"
+      ],
+      "source": {
+        "title": "Контур OpenStreetMap, проверка каталога 25.10.2026",
+        "url": "https://www.openstreetmap.org/relation/2587662"
+      },
+      "references": [],
+      "precise": false
+    },
+    {
+      "id": "osm-relation-8410980",
+      "name": "Природный заказник «Сосновые леса на песчаных дюнах»",
+      "region_ids": [
+        "moscow-oblast"
+      ],
+      "source": {
+        "title": "Контур OpenStreetMap, проверка каталога 25.10.2026",
+        "url": "https://www.openstreetmap.org/relation/8410980"
+      },
+      "references": [],
+      "precise": false
+    },
+    {
+      "id": "osm-relation-3678533",
+      "name": "Природный парк \"Долина реки Сходни в Куркино\"",
+      "region_ids": [
+        "moscow"
+      ],
+      "source": {
+        "title": "Контур OpenStreetMap, проверка каталога 25.10.2026",
+        "url": "https://www.openstreetmap.org/relation/3678533"
+      },
+      "references": [],
+      "precise": false
+    },
+    {
+      "id": "osm-relation-3958539",
+      "name": "Тюменский заказник",
+      "region_ids": [
+        "tyumen"
+      ],
+      "source": {
+        "title": "Контур OpenStreetMap, проверка каталога 25.10.2026",
+        "url": "https://www.openstreetmap.org/relation/3958539"
+      },
+      "references": [],
+      "precise": false
+    },
+    {
+      "id": "osm-way-241129864",
+      "name": "заказник «Ново-Таповский»",
+      "region_ids": [
+        "tyumen"
+      ],
+      "source": {
+        "title": "Контур OpenStreetMap, проверка каталога 25.10.2026",
+        "url": "https://www.openstreetmap.org/way/241129864"
+      },
+      "references": [],
+      "precise": false
+    },
+    {
+      "id": "osm-way-241129865",
+      "name": "заказник «Юргинский»",
+      "region_ids": [
+        "tyumen"
+      ],
+      "source": {
+        "title": "Контур OpenStreetMap, проверка каталога 25.10.2026",
+        "url": "https://www.openstreetmap.org/way/241129865"
+      },
+      "references": [],
+      "precise": false
+    }
+  ]
+}
