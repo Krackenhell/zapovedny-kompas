@@ -1,12 +1,12 @@
 {
  "source": "NASA FIRMS: NOAA-20 и NOAA-21, последние 48 часов",
  "radius_m": 5000,
- "updated": "2026-10-26T08:58:21Z",
+ "updated": "2026-10-26T12:56:05Z",
  "regions": {
   "tyumen": {
-   "status": "ok",
+   "status": "error",
    "updated": "2026-10-26T08:58:21Z",
-   "attempted": "2026-10-26T08:58:21Z",
+   "attempted": "2026-10-26T12:56:05Z",
    "checked_points": 29,
    "fires": [
     {
@@ -386,12 +386,13 @@
      "near_oopt": false,
      "first_seen": null
     }
-   ]
+   ],
+   "error": "Не удалось обновить данные NASA. Показаны последние полученные данные, если они есть."
   },
   "moscow": {
-   "status": "ok",
+   "status": "error",
    "updated": "2026-10-26T08:58:21Z",
-   "attempted": "2026-10-26T08:58:21Z",
+   "attempted": "2026-10-26T12:56:05Z",
    "checked_points": 1,
    "fires": [
     {
@@ -407,12 +408,13 @@
      "near_oopt": false,
      "first_seen": null
     }
-   ]
+   ],
+   "error": "Не удалось обновить данные NASA. Показаны последние полученные данные, если они есть."
   },
   "moscow-oblast": {
-   "status": "ok",
+   "status": "error",
    "updated": "2026-10-26T08:58:21Z",
-   "attempted": "2026-10-26T08:58:21Z",
+   "attempted": "2026-10-26T12:56:05Z",
    "checked_points": 22,
    "fires": [
     {
@@ -701,7 +703,8 @@
      "near_oopt": false,
      "first_seen": null
     }
-   ]
+   ],
+   "error": "Не удалось обновить данные NASA. Показаны последние полученные данные, если они есть."
   }
  },
  "checked_points": 52,
