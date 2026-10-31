@@ -1,13 +1,13 @@
 {
  "source": "NASA FIRMS: NOAA-20 и NOAA-21, последние 48 часов",
  "radius_m": 5000,
- "updated": "2026-10-31T00:46:15Z",
+ "updated": "2026-10-31T06:58:27Z",
  "regions": {
   "tyumen": {
    "status": "ok",
-   "updated": "2026-10-31T00:46:15Z",
-   "attempted": "2026-10-31T00:46:15Z",
-   "checked_points": 7,
+   "updated": "2026-10-31T06:58:27Z",
+   "attempted": "2026-10-31T06:58:27Z",
+   "checked_points": 6,
    "fires": [
     {
      "lat": 56.98671,
@@ -86,35 +86,88 @@
      "region_id": "tyumen",
      "near_oopt": false,
      "first_seen": "2026-10-29T16:54:51Z"
-    },
-    {
-     "lat": 56.27774,
-     "lon": 65.7007,
-     "acquired": "2026-10-29T06:57:00Z",
-     "satellite": "NOAA-20",
-     "confidence": "средняя",
-     "frp": 7.78,
-     "daynight": "D",
-     "source": "VIIRS_NOAA20_NRT",
-     "region_id": "tyumen",
-     "near_oopt": false,
-     "first_seen": "2026-10-29T09:54:11Z"
     }
    ]
   },
   "moscow": {
    "status": "ok",
-   "updated": "2026-10-31T00:46:15Z",
-   "attempted": "2026-10-31T00:46:15Z",
-   "checked_points": 0,
-   "fires": []
+   "updated": "2026-10-31T06:58:27Z",
+   "attempted": "2026-10-31T06:58:27Z",
+   "checked_points": 1,
+   "fires": [
+    {
+     "lat": 55.64864,
+     "lon": 37.79907,
+     "acquired": "2026-10-30T23:50:00Z",
+     "satellite": "NOAA-20",
+     "confidence": "средняя",
+     "frp": 0.91,
+     "daynight": "N",
+     "source": "VIIRS_NOAA20_NRT",
+     "region_id": "moscow",
+     "near_oopt": false,
+     "first_seen": "2026-10-31T06:58:27Z"
+    }
+   ]
   },
   "moscow-oblast": {
    "status": "ok",
-   "updated": "2026-10-31T00:46:15Z",
-   "attempted": "2026-10-31T00:46:15Z",
-   "checked_points": 2,
+   "updated": "2026-10-31T06:58:27Z",
+   "attempted": "2026-10-31T06:58:27Z",
+   "checked_points": 6,
    "fires": [
+    {
+     "lat": 55.05872,
+     "lon": 38.83438,
+     "acquired": "2026-10-30T23:50:00Z",
+     "satellite": "NOAA-20",
+     "confidence": "средняя",
+     "frp": 0.61,
+     "daynight": "N",
+     "source": "VIIRS_NOAA20_NRT",
+     "region_id": "moscow-oblast",
+     "near_oopt": false,
+     "first_seen": "2026-10-31T06:58:27Z"
+    },
+    {
+     "lat": 55.06194,
+     "lon": 38.83598,
+     "acquired": "2026-10-30T23:50:00Z",
+     "satellite": "NOAA-20",
+     "confidence": "средняя",
+     "frp": 0.82,
+     "daynight": "N",
+     "source": "VIIRS_NOAA20_NRT",
+     "region_id": "moscow-oblast",
+     "near_oopt": false,
+     "first_seen": "2026-10-31T06:58:27Z"
+    },
+    {
+     "lat": 55.25735,
+     "lon": 38.74351,
+     "acquired": "2026-10-30T23:50:00Z",
+     "satellite": "NOAA-20",
+     "confidence": "средняя",
+     "frp": 0.98,
+     "daynight": "N",
+     "source": "VIIRS_NOAA20_NRT",
+     "region_id": "moscow-oblast",
+     "near_oopt": false,
+     "first_seen": "2026-10-31T06:58:27Z"
+    },
+    {
+     "lat": 55.55459,
+     "lon": 37.76029,
+     "acquired": "2026-10-30T23:50:00Z",
+     "satellite": "NOAA-20",
+     "confidence": "средняя",
+     "frp": 0.59,
+     "daynight": "N",
+     "source": "VIIRS_NOAA20_NRT",
+     "region_id": "moscow-oblast",
+     "near_oopt": false,
+     "first_seen": "2026-10-31T06:58:27Z"
+    },
     {
      "lat": 55.18291,
      "lon": 38.63477,
@@ -144,7 +197,7 @@
    ]
   }
  },
- "checked_points": 9,
+ "checked_points": 13,
  "fires": [
   {
    "lat": 56.98671,
@@ -225,17 +278,69 @@
    "first_seen": "2026-10-29T16:54:51Z"
   },
   {
-   "lat": 56.27774,
-   "lon": 65.7007,
-   "acquired": "2026-10-29T06:57:00Z",
+   "lat": 55.64864,
+   "lon": 37.79907,
+   "acquired": "2026-10-30T23:50:00Z",
    "satellite": "NOAA-20",
    "confidence": "средняя",
-   "frp": 7.78,
-   "daynight": "D",
+   "frp": 0.91,
+   "daynight": "N",
    "source": "VIIRS_NOAA20_NRT",
-   "region_id": "tyumen",
+   "region_id": "moscow",
    "near_oopt": false,
-   "first_seen": "2026-10-29T09:54:11Z"
+   "first_seen": "2026-10-31T06:58:27Z"
+  },
+  {
+   "lat": 55.05872,
+   "lon": 38.83438,
+   "acquired": "2026-10-30T23:50:00Z",
+   "satellite": "NOAA-20",
+   "confidence": "средняя",
+   "frp": 0.61,
+   "daynight": "N",
+   "source": "VIIRS_NOAA20_NRT",
+   "region_id": "moscow-oblast",
+   "near_oopt": false,
+   "first_seen": "2026-10-31T06:58:27Z"
+  },
+  {
+   "lat": 55.06194,
+   "lon": 38.83598,
+   "acquired": "2026-10-30T23:50:00Z",
+   "satellite": "NOAA-20",
+   "confidence": "средняя",
+   "frp": 0.82,
+   "daynight": "N",
+   "source": "VIIRS_NOAA20_NRT",
+   "region_id": "moscow-oblast",
+   "near_oopt": false,
+   "first_seen": "2026-10-31T06:58:27Z"
+  },
+  {
+   "lat": 55.25735,
+   "lon": 38.74351,
+   "acquired": "2026-10-30T23:50:00Z",
+   "satellite": "NOAA-20",
+   "confidence": "средняя",
+   "frp": 0.98,
+   "daynight": "N",
+   "source": "VIIRS_NOAA20_NRT",
+   "region_id": "moscow-oblast",
+   "near_oopt": false,
+   "first_seen": "2026-10-31T06:58:27Z"
+  },
+  {
+   "lat": 55.55459,
+   "lon": 37.76029,
+   "acquired": "2026-10-30T23:50:00Z",
+   "satellite": "NOAA-20",
+   "confidence": "средняя",
+   "frp": 0.59,
+   "daynight": "N",
+   "source": "VIIRS_NOAA20_NRT",
+   "region_id": "moscow-oblast",
+   "near_oopt": false,
+   "first_seen": "2026-10-31T06:58:27Z"
   },
   {
    "lat": 55.18291,
