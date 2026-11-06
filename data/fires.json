@@ -1,84 +1,30 @@
 {
  "source": "NASA FIRMS: NOAA-20 и NOAA-21, последние 48 часов",
  "radius_m": 5000,
- "updated": "2026-11-05T18:42:58Z",
+ "updated": "2026-11-06T00:12:17Z",
  "regions": {
   "tyumen": {
    "status": "ok",
-   "updated": "2026-11-05T18:42:58Z",
-   "attempted": "2026-11-05T18:42:58Z",
-   "checked_points": 2,
-   "fires": [
-    {
-     "lat": 59.05387,
-     "lon": 71.85882,
-     "acquired": "2026-11-03T20:53:00Z",
-     "satellite": "NOAA-20",
-     "confidence": "средняя",
-     "frp": 1.59,
-     "daynight": "N",
-     "source": "VIIRS_NOAA20_NRT",
-     "region_id": "tyumen",
-     "near_oopt": false,
-     "first_seen": "2026-11-04T06:13:02Z"
-    },
-    {
-     "lat": 59.19617,
-     "lon": 71.36549,
-     "acquired": "2026-11-03T19:55:00Z",
-     "satellite": "NOAA-21",
-     "confidence": "средняя",
-     "frp": 4.91,
-     "daynight": "N",
-     "source": "VIIRS_NOAA21_NRT",
-     "region_id": "tyumen",
-     "near_oopt": false,
-     "first_seen": "2026-11-03T23:18:54Z"
-    }
-   ]
+   "updated": "2026-11-06T00:12:17Z",
+   "attempted": "2026-11-06T00:12:17Z",
+   "checked_points": 0,
+   "fires": []
   },
   "moscow": {
    "status": "ok",
-   "updated": "2026-11-05T18:42:58Z",
-   "attempted": "2026-11-05T18:42:58Z",
+   "updated": "2026-11-06T00:12:17Z",
+   "attempted": "2026-11-06T00:12:17Z",
    "checked_points": 0,
    "fires": []
   },
   "moscow-oblast": {
    "status": "ok",
-   "updated": "2026-11-05T18:42:58Z",
-   "attempted": "2026-11-05T18:42:58Z",
+   "updated": "2026-11-06T00:12:17Z",
+   "attempted": "2026-11-06T00:12:17Z",
    "checked_points": 0,
    "fires": []
   }
  },
- "checked_points": 2,
- "fires": [
-  {
-   "lat": 59.05387,
-   "lon": 71.85882,
-   "acquired": "2026-11-03T20:53:00Z",
-   "satellite": "NOAA-20",
-   "confidence": "средняя",
-   "frp": 1.59,
-   "daynight": "N",
-   "source": "VIIRS_NOAA20_NRT",
-   "region_id": "tyumen",
-   "near_oopt": false,
-   "first_seen": "2026-11-04T06:13:02Z"
-  },
-  {
-   "lat": 59.19617,
-   "lon": 71.36549,
-   "acquired": "2026-11-03T19:55:00Z",
-   "satellite": "NOAA-21",
-   "confidence": "средняя",
-   "frp": 4.91,
-   "daynight": "N",
-   "source": "VIIRS_NOAA21_NRT",
-   "region_id": "tyumen",
-   "near_oopt": false,
-   "first_seen": "2026-11-03T23:18:54Z"
-  }
- ]
+ "checked_points": 0,
+ "fires": []
 }
