@@ -1,14 +1,27 @@
 {
  "source": "NASA FIRMS: NOAA-20 и NOAA-21, последние 48 часов",
  "radius_m": 5000,
- "updated": "2026-11-10T09:44:33Z",
+ "updated": "2026-11-10T17:47:39Z",
  "regions": {
   "tyumen": {
    "status": "ok",
-   "updated": "2026-11-10T09:44:33Z",
-   "attempted": "2026-11-10T09:44:33Z",
-   "checked_points": 41,
+   "updated": "2026-11-10T17:47:39Z",
+   "attempted": "2026-11-10T17:47:39Z",
+   "checked_points": 46,
    "fires": [
+    {
+     "lat": 56.76269,
+     "lon": 67.02749,
+     "acquired": "2026-11-10T08:09:00Z",
+     "satellite": "NOAA-20",
+     "confidence": "средняя",
+     "frp": 10.4,
+     "daynight": "D",
+     "source": "VIIRS_NOAA20_NRT",
+     "region_id": "tyumen",
+     "near_oopt": false,
+     "first_seen": "2026-11-10T17:47:39Z"
+    },
     {
      "lat": 59.41266,
      "lon": 71.6284,
@@ -21,6 +34,58 @@
      "region_id": "tyumen",
      "near_oopt": false,
      "first_seen": "2026-11-10T02:04:03Z"
+    },
+    {
+     "lat": 59.19651,
+     "lon": 71.37026,
+     "acquired": "2026-11-09T21:22:00Z",
+     "satellite": "NOAA-21",
+     "confidence": "средняя",
+     "frp": 1.77,
+     "daynight": "N",
+     "source": "VIIRS_NOAA21_NRT",
+     "region_id": "tyumen",
+     "near_oopt": false,
+     "first_seen": "2026-11-10T17:47:39Z"
+    },
+    {
+     "lat": 59.19987,
+     "lon": 71.37187,
+     "acquired": "2026-11-09T21:22:00Z",
+     "satellite": "NOAA-21",
+     "confidence": "средняя",
+     "frp": 1.77,
+     "daynight": "N",
+     "source": "VIIRS_NOAA21_NRT",
+     "region_id": "tyumen",
+     "near_oopt": false,
+     "first_seen": "2026-11-10T17:47:39Z"
+    },
+    {
+     "lat": 59.20077,
+     "lon": 71.36469,
+     "acquired": "2026-11-09T21:22:00Z",
+     "satellite": "NOAA-21",
+     "confidence": "средняя",
+     "frp": 2.57,
+     "daynight": "N",
+     "source": "VIIRS_NOAA21_NRT",
+     "region_id": "tyumen",
+     "near_oopt": false,
+     "first_seen": "2026-11-10T17:47:39Z"
+    },
+    {
+     "lat": 59.41154,
+     "lon": 71.63283,
+     "acquired": "2026-11-09T21:22:00Z",
+     "satellite": "NOAA-21",
+     "confidence": "средняя",
+     "frp": 7.86,
+     "daynight": "N",
+     "source": "VIIRS_NOAA21_NRT",
+     "region_id": "tyumen",
+     "near_oopt": false,
+     "first_seen": "2026-11-10T17:47:39Z"
     },
     {
      "lat": 59.05319,
@@ -546,21 +611,34 @@
   },
   "moscow": {
    "status": "ok",
-   "updated": "2026-11-10T09:44:33Z",
-   "attempted": "2026-11-10T09:44:33Z",
+   "updated": "2026-11-10T17:47:39Z",
+   "attempted": "2026-11-10T17:47:39Z",
    "checked_points": 0,
    "fires": []
   },
   "moscow-oblast": {
    "status": "ok",
-   "updated": "2026-11-10T09:44:33Z",
-   "attempted": "2026-11-10T09:44:33Z",
+   "updated": "2026-11-10T17:47:39Z",
+   "attempted": "2026-11-10T17:47:39Z",
    "checked_points": 0,
    "fires": []
   }
  },
- "checked_points": 41,
+ "checked_points": 46,
  "fires": [
+  {
+   "lat": 56.76269,
+   "lon": 67.02749,
+   "acquired": "2026-11-10T08:09:00Z",
+   "satellite": "NOAA-20",
+   "confidence": "средняя",
+   "frp": 10.4,
+   "daynight": "D",
+   "source": "VIIRS_NOAA20_NRT",
+   "region_id": "tyumen",
+   "near_oopt": false,
+   "first_seen": "2026-11-10T17:47:39Z"
+  },
   {
    "lat": 59.41266,
    "lon": 71.6284,
@@ -573,6 +651,58 @@
    "region_id": "tyumen",
    "near_oopt": false,
    "first_seen": "2026-11-10T02:04:03Z"
+  },
+  {
+   "lat": 59.19651,
+   "lon": 71.37026,
+   "acquired": "2026-11-09T21:22:00Z",
+   "satellite": "NOAA-21",
+   "confidence": "средняя",
+   "frp": 1.77,
+   "daynight": "N",
+   "source": "VIIRS_NOAA21_NRT",
+   "region_id": "tyumen",
+   "near_oopt": false,
+   "first_seen": "2026-11-10T17:47:39Z"
+  },
+  {
+   "lat": 59.19987,
+   "lon": 71.37187,
+   "acquired": "2026-11-09T21:22:00Z",
+   "satellite": "NOAA-21",
+   "confidence": "средняя",
+   "frp": 1.77,
+   "daynight": "N",
+   "source": "VIIRS_NOAA21_NRT",
+   "region_id": "tyumen",
+   "near_oopt": false,
+   "first_seen": "2026-11-10T17:47:39Z"
+  },
+  {
+   "lat": 59.20077,
+   "lon": 71.36469,
+   "acquired": "2026-11-09T21:22:00Z",
+   "satellite": "NOAA-21",
+   "confidence": "средняя",
+   "frp": 2.57,
+   "daynight": "N",
+   "source": "VIIRS_NOAA21_NRT",
+   "region_id": "tyumen",
+   "near_oopt": false,
+   "first_seen": "2026-11-10T17:47:39Z"
+  },
+  {
+   "lat": 59.41154,
+   "lon": 71.63283,
+   "acquired": "2026-11-09T21:22:00Z",
+   "satellite": "NOAA-21",
+   "confidence": "средняя",
+   "frp": 7.86,
+   "daynight": "N",
+   "source": "VIIRS_NOAA21_NRT",
+   "region_id": "tyumen",
+   "near_oopt": false,
+   "first_seen": "2026-11-10T17:47:39Z"
   },
   {
    "lat": 59.05319,
