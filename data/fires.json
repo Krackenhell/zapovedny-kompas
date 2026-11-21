@@ -1,26 +1,26 @@
 {
  "source": "NASA FIRMS: NOAA-20 и NOAA-21, последние 48 часов",
  "radius_m": 5000,
- "updated": "2026-11-21T17:28:19Z",
+ "updated": "2026-11-21T23:11:36Z",
  "regions": {
   "tyumen": {
    "status": "ok",
-   "updated": "2026-11-21T17:28:19Z",
-   "attempted": "2026-11-21T17:28:19Z",
+   "updated": "2026-11-21T23:11:36Z",
+   "attempted": "2026-11-21T23:11:36Z",
    "checked_points": 0,
    "fires": []
   },
   "moscow": {
    "status": "ok",
-   "updated": "2026-11-21T17:28:19Z",
-   "attempted": "2026-11-21T17:28:19Z",
+   "updated": "2026-11-21T23:11:36Z",
+   "attempted": "2026-11-21T23:11:36Z",
    "checked_points": 0,
    "fires": []
   },
   "moscow-oblast": {
    "status": "ok",
-   "updated": "2026-11-21T17:28:19Z",
-   "attempted": "2026-11-21T17:28:19Z",
+   "updated": "2026-11-21T23:11:36Z",
+   "attempted": "2026-11-21T23:11:36Z",
    "checked_points": 1,
    "fires": [
     {
